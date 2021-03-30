@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>하이퍼링크태그</title>
+</head>
+
+<body>
+    <!-- 이미지도 a태그 설정 가능 -->
+    <a href="01_글자관련태그.html">1. 글자관련태그</a><br>
+    <a href="http://www.naver.com">2. 네이버로 이동</a><br>
+    <a href="http://www.naver.com"><img width="200px" src="img/cat.jpg" alt="네이버 가자"></a><br><br>
+    <h3>[ 그림 영역 나누기 ]</h3>
+    <img width="500px" usemap="#catMap" src="img/cat.jpg" alt="고양이 얍">
+    <map name="catMap">
+        <area shape="circle" coords="249,151,85" href="img/cat.jpg" alt="고양이 머리">
+        <area shape="circle" coords="173,276,48" href="img/disk.jpg" alt="고양이 오른손">
+        <area shape="circle" coords="263,323,45" href="img/leg.jpg" alt="고양이 왼손">
+    </map>
+    <br>
+    <!-- _blank : 새창에서 열기 -->
+    <a href="http://www.naver.com" target="_blank">네이버로 이동</a>
+</body>
+
+</html>
