@@ -1,0 +1,42 @@
+.edgeBlue {
+  border: 3px solid blue;
+  border-right-style: dashed;
+  border-bottom-style: dashed;
+  border-top-left-radius: 30px;
+}
+
+.edgeGreen {
+  border: 3px solid green;
+  border-left-style: dashed;
+  border-bottom-style: dashed;
+  border-top-right-radius: 23px;
+}
+
+.edgeYellow {
+  border: 3px solid yellow;
+  border-right-style: dashed;
+  border-top-style: dashed;
+  border-bottom-left-radius: 30px;
+}
+
+.edgeRed {
+  border: 3px solid red;
+  border-left-style: dotted;
+  border-top-style: dotted;
+  border-bottom-right-radius: 30px;
+}
+
+.edgeCenter {
+  border: 3px dotted plum;
+}
+
+div > div {
+  display: inline-block;
+}
+
+div > div,
+td {
+  width: 100px;
+  height: 100px;
+  border: 3px dashed;
+}

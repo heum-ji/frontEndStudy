@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0401 textStyle 실습</title>
+
+    <link rel="stylesheet" href="../cssfiles/textStyle.css" type="text/css">
+</head>
+
+<body>
+    <h1>텍스트 스타일</h1>
+    <hr>
+
+    <h3>color 속성 : 텍스트의 색상을 지정할 수 있다.</h3>
+    <pre> 선택자 { color : 색상명영문이름 | 16진수숫자 | rgb값 | rgba값 }의 형식으로 사용된다.</pre>
+    <p>색상값 참조 사이트 : <a href="http://www.naver.com">사이트로 이동</a></p>
+    <ul>
+        <li class="color">색상명으로 지정</li>
+        <li class="color16">16진수 값으로 지정</li>
+        <li class="colorRgb">rgb로 지정</li>
+        <li class="colorRgba">rgba로 지정</li>
+    </ul>
+    <hr>
+
+    <h3>text-decoration 속성 : 텍스트에 줄을 긋거나 줄을 없앨 때 사용한다.</h3>
+    <pre> 선택자 { text-decoration : none | underline | overline | line-through; }의 형식으로 표현한다.</pre>
+    <ul>
+        <li><a class="decNone" href="http://www.naver.com">하이퍼링크 밑줄 없애기</a></li>
+        <li class="decUnderline">텍스트영역 아래 줄 긋기</li>
+        <li class="decLineThrough">텍스트영역 중간에 줄 긋기</li><br>
+        <li class="decOverline">텍스트영역 위에 줄 긋기</li>
+    </ul>
+    <hr>
+
+    <h3>text-transform 속성 : 영문 텍스트의 대소문자 변환시 사용한다.</h3>
+    <pre> 선택자 { text-transform : none | capitalize | uppercase | lowercase; }의 형식으로 표현한다.</pre>
+    <ul>
+        <li class="transNone">none</li>
+        <li class="transCap">capitalize : 영문자의 첫 글자만 대문자로</li>
+        <li class="transUpper">uppercase : 모든 영문자를 대문자로</li>
+        <li class="transLower">LOWERCASE : 모든 영문자를 소문자로</li>
+    </ul>
+    <hr>
+
+    <h3>text-shadow 속성 : 텍스트에 그림자 효과를 줄 때 사용한다.</h3>
+    <pre> 선택자 { text-shadow : none | 가로거리 세로거리 번짐정도 색상; }의 형식으로 표현한다.</pre>
+
+    <pre>                <span class="shadow1">HTML5</span>                       <span class="shadow2">HTML5</span>
+     </pre>
+
+    <p>첫번째 값 : 5px 5px orange</p>
+    <p>두번째 값 : 0px 0px 4px #ccc, 0px -5px 4px #ff3, -2px -15px 11px #f80,
+        2px -19px 19px #f20</p>
+</body>
+
+</html>

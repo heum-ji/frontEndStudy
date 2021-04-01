@@ -1,0 +1,59 @@
+.color {
+  color: blue;
+}
+
+.color16 {
+  color: #0000ff;
+}
+
+.colorRgb {
+  color: rgb(0, 0, 255);
+}
+
+.colorRgba {
+  color: rgba(0, 0, 255, 0.5);
+}
+
+.decNone {
+  text-decoration: none;
+}
+
+.decUnderline {
+  text-decoration: underline;
+}
+
+.decOverline {
+  text-decoration: overline;
+}
+
+.decLineThrough {
+  text-decoration: line-through;
+}
+
+.transNone {
+  text-transform: none;
+}
+
+.transCap {
+  text-transform: capitalize;
+}
+
+.transUpper {
+  text-transform: uppercase;
+}
+
+.transLower {
+  text-transform: lowercase;
+}
+
+.shadow1 {
+  color: red;
+  font-size: 700%;
+  text-shadow: 5px 5px orange;
+}
+
+.shadow2 {
+  font-size: 700%;
+  text-shadow: 0px 0px 4px #ccc, 0px -5px 4px #ff3, -2px -15px 11px #f80,
+    2px -19px 19px #f20;
+}
