@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>layoutStudy1</title>
+
+    <style>
+      div {
+        box-sizing: border-box;
+        border: 1px solid black;
+      }
+
+      .wrap {
+        width: 1280px;
+      }
+
+      .header {
+        height: 150px;
+      }
+      .header-left {
+        width: 20%;
+        height: 100%;
+        float: left;
+      }
+      .header-center {
+        width: 60%;
+        height: 100%;
+        float: left;
+      }
+      .header-right {
+        width: 20%;
+        height: 100%;
+        float: left;
+      }
+
+      .nav {
+        height: 50px;
+      }
+
+      .content {
+        height: 500px;
+      }
+      .content-left {
+        width: 15%;
+        height: 100%;
+        float: left;
+      }
+      .content-center {
+        width: 60%;
+        height: 100%;
+        float: left;
+      }
+      .content-right {
+        width: 25%;
+        height: 100%;
+        float: left;
+      }
+      .footer {
+        height: 150px;
+      }
+      .login {
+        height: 25%;
+      }
+      .login-content {
+        height: 75%;
+        overflow: hidden;
+      }
+      .login-content::after {
+        clear: left;
+      }
+      .login-content-left {
+        width: 65%;
+        height: 100%;
+        float: left;
+      }
+      .login-content-left > div {
+        height: 50%;
+      }
+      .login-id {
+        width: 100%;
+        height: 95%;
+        padding: 0px;
+        border: 1px solid black;
+      }
+      .login-pw {
+        width: 100%;
+        height: 95%;
+        padding: 0px;
+        border: 1px solid black;
+      }
+      .login-content-right {
+        width: 35%;
+        height: 100%;
+        float: left;
+        text-align: center;
+        line-height: 90px;
+      }
+      .login-content-right > input {
+        width: 90%;
+        height: 90%;
+      }
+      .login-footer {
+        height: 25%;
+        text-align: center;
+        line-height: 30px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <div class="header">
+        <div class="header-left"></div>
+        <div class="header-center"></div>
+        <div class="header-right"></div>
+      </div>
+
+      <div class="nav"></div>
+
+      <div class="content">
+        <div class="content-left"></div>
+        <div class="content-center"></div>
+        <div class="content-right">
+          <div class="login">
+            <div class="login-content">
+              <div class="login-content-left">
+                <div><input class="login-id" type="text" placeholder="ID를 입력하세요." /></div>
+                <div><input class="login-pw" type="password" placeholder="PW를 입력하세요." /></div>
+              </div>
+              <div class="login-content-right">
+                <input type="submit" value="로그인" />
+              </div>
+            </div>
+            <div class="login-footer">
+              <a href="http://www.naver.com">회원가입</a>
+              <a href="http://www.naver.com">ID/PW 찾기</a>
+            </div>
+          </div>
+          dd
+        </div>
+      </div>
+
+      <div class="footer"></div>
+    </div>
+  </body>
+</html>
