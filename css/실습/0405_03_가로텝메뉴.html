@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>0405_03_가로텝메뉴</title>
+    <style>
+      .navi {
+        margin: 50px;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        width: 720px;
+        overflow: hidden;
+      }
+      .navi > ul {
+        height: 100px;
+        background: linear-gradient(to bottom, #ffe761, #ffe761 50%, white 50%, white 100%);
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+      .navi > ul > li {
+        width: 130px;
+        float: left;
+        text-align: center;
+        line-height: 50px;
+      }
+      .navi > ul > li > a {
+        width: 100%;
+        display: inline-block;
+        text-decoration: none;
+        color: #092e20;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+      }
+
+      /*메인메뉴 hover 효과*/
+      .navi > ul > li:hover > a {
+        background-color: #326342;
+        color: #ffe761;
+        font-weight: bold;
+      }
+
+      /*3번째 서브메뉴 시작지점 수정*/
+      .navi > ul > li:nth-last-child(2) > .sub {
+        transform: translateX(-260px);
+      }
+
+      /*선택한 메뉴 - 서브메뉴 hover 효과*/
+      .navi > ul > li:hover > .sub {
+        height: 50px;
+      }
+
+      .sub {
+        height: 0;
+        background-color: #234f32;
+      }
+
+      .sub > li {
+        float: left;
+        width: 130px;
+      }
+      .sub > li > a {
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        display: inline-block;
+        color: #ffe761;
+      }
+
+      /*서브메뉴 hover 효과*/
+      .sub > li:hover > a {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>가로텝 메뉴 만들기</h1>
+    <hr />
+    <div class="navi">
+      <ul>
+        <li>
+          <a href="#">프로그램 언어</a>
+          <ul class="sub">
+            <li><a href="#">JAVA</a></li>
+            <li><a href="#">C</a></li>
+            <li><a href="#">C++</a></li>
+            <li><a href="#">Python</a></li>
+          </ul>
+        </li>
+        <li><a href="#">데이터베이스</a></li>
+        <li>
+          <a href="#">FrontEnd</a>
+          <ul class="sub">
+            <li><a href="#">HTML5</a></li>
+            <li><a href="#">CSS3</a></li>
+            <li><a href="#">javascript</a></li>
+            <li><a href="#">jQuery</a></li>
+          </ul>
+        </li>
+        <li><a href="#">게시판</a></li>
+      </ul>
+    </div>
+  </body>
+</html>

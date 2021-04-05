@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>0405_04_세로메뉴(아코디언) 만들기</title>
+
+    <style>
+      .navi {
+        margin: 50px;
+      }
+      /*ul 공통 값 설정*/
+      ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        width: 200px;
+      }
+      /*a 공통 값 설정*/
+      a {
+        text-shadow: 1px 1px 1px #d7e2e9;
+        text-decoration: none;
+        border: 1px solid #ffffff;
+        color: #d7e2e9;
+      }
+
+      /*메인 메뉴 설정*/
+      .navi > ul > li > a {
+        padding-left: 40px;
+        display: block;
+        height: 40px;
+        line-height: 40px;
+        background-color: #50021b;
+      }
+      /*메인 세로 메뉴 hover 효과*/
+      .navi > ul > li:hover > a {
+        color: #1f4864;
+        background-color: #ffcb35;
+      }
+      /*서브 메뉴 보이기 : border 길이 * 4 add*/
+      .navi > ul > li:hover > .sub {
+        height: 168px;
+      }
+
+      /*서브 메뉴 공통 값 설정*/
+      .sub {
+        height: 0;
+        display: block;
+        overflow: hidden;
+      }
+
+      /*서브 메뉴 설정*/
+      .sub > li > a {
+        padding-left: 60px;
+        height: 40px;
+        line-height: 40px;
+        display: block;
+        background-color: #e95c40;
+      }
+
+      /*서브 메뉴 hover 효과*/
+      .sub > li:hover > a {
+        background-color: #1f4864;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>세로메뉴(아코디언) 만들기</h1>
+    <hr />
+    <div class="navi">
+      <ul>
+        <li>
+          <a href="#">프로그램 언어</a>
+          <ul class="sub">
+            <li><a href="#">JAVA</a></li>
+            <li><a href="#">C</a></li>
+            <li><a href="#">C++</a></li>
+            <li><a href="#">Python</a></li>
+          </ul>
+        </li>
+        <li><a href="#">데이터베이스</a></li>
+        <li>
+          <a href="#">FrontEnd</a>
+          <ul class="sub">
+            <li><a href="#">HTML5</a></li>
+            <li><a href="#">CSS3</a></li>
+            <li><a href="#">javascript</a></li>
+            <li><a href="#">jQuery</a></li>
+          </ul>
+        </li>
+        <li><a href="#">게시판</a></li>
+      </ul>
+    </div>
+  </body>
+</html>
