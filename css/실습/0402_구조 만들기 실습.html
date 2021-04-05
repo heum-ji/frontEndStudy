@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>0402_구조 만들기 실습</title>
+    <style>
+      div {
+        /* border: 1px solid black; */
+        box-sizing: border-box;
+      }
+      /* wrap*/
+      .wrap {
+        width: 1280px;
+        margin: 0 auto;
+      }
+
+      /*header*/
+      .header {
+        text-align: center;
+        overflow: hidden;
+      }
+      .header > div {
+        float: left;
+      }
+      .header-left {
+        width: 20%;
+        height: 150px;
+        padding-top: 34px;
+      }
+      .header-center {
+        width: 60%;
+        height: 150px;
+        padding-top: 34px;
+      }
+      .header-right {
+        width: 20%;
+        height: 150px;
+      }
+      /* nav */
+      .nav {
+        height: 30px;
+        overflow: hidden;
+        text-align: center;
+        line-height: 30px;
+        color: wheat;
+        background-color: #64ad15;
+        margin-bottom: 10px;
+      }
+      .nav > div {
+        float: left;
+        width: calc(1280px / 4);
+      }
+      .nav > div > a {
+        text-decoration: none;
+      }
+
+      /*content*/
+      .content {
+        overflow: hidden;
+      }
+      .content > div {
+        float: left;
+      }
+
+      .left {
+        height: 625px;
+        width: 15%;
+      }
+      .right {
+        height: 625px;
+        width: 25%;
+      }
+      /*main*/
+      .main {
+        height: 625px;
+        width: 60%;
+      }
+      .main > div {
+        overflow: hidden;
+        text-align: center;
+        margin: 0 auto;
+        margin-top: 10px;
+      }
+      .main > div > div {
+        float: left;
+        width: 50%;
+      }
+      .main-blank {
+        height: 20px;
+      }
+
+      /*footer*/
+      .footer {
+        height: 100px;
+        text-align: center;
+        line-height: 100px;
+      }
+
+      /*login*/
+      .login-wrap {
+        width: 319px;
+      }
+      .login-main {
+        overflow: hidden;
+      }
+      .login-main > div {
+        float: left;
+      }
+      .login-left {
+        width: 55%;
+        height: 46px;
+      }
+      .login-right {
+        text-align: center;
+        width: 45%;
+      }
+      .login-right > input {
+        height: 40px;
+      }
+      .login-id {
+        height: 22px;
+      }
+      .login-pw {
+        height: 22px;
+      }
+      .login-footer {
+        height: 20px;
+        text-align: center;
+      }
+      .login-footer > input {
+        float: left;
+      }
+      /*msg~~~*/
+
+      /*msg-head*/
+      .msg-head {
+        text-align: center;
+        font-weight: bold;
+      }
+      /*msg-wrab*/
+      .msg-wrab {
+        text-align: center;
+        overflow: hidden;
+        font-weight: bold;
+      }
+      .msg-wrab-left {
+        width: 20%;
+      }
+      .msg-wrab-right {
+        width: 80%;
+      }
+      .msg-wrab > div {
+        float: left;
+      }
+      /*msg-content*/
+      .msg-content {
+        overflow: hidden;
+      }
+      .msg-content > div {
+        float: left;
+      }
+      .msg-content-left {
+        width: 20%;
+      }
+      .msg-content-right {
+        width: 80%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="header">
+        <div class="header-left">
+          <img height="80px" src="실습_사용이미지/logo.jpg" alt="logo" />
+        </div>
+        <div class="header-center">
+          <img height="80px" src="실습_사용이미지/mainlogo.jpg" alt="mainlogo" />
+        </div>
+        <div class="header-right"></div>
+      </div>
+      <div class="nav">
+        <div>Home</div>
+        <div>Profile</div>
+        <div>Board</div>
+        <div>Contact</div>
+      </div>
+      <div class="content">
+        <div class="left">
+          <img src="실습_사용이미지/left_img.jpg" alt="left_img" />
+        </div>
+        <div class="main">
+          <div>
+            <div>
+              <img width="360px" height="255px" src="실습_사용이미지/main_img1.jpg" alt="" /><br />
+              나무를 심는 사람들
+            </div>
+
+            <div>
+              <img " width="360px" height="255px" src="실습_사용이미지/main_img2.jpg" alt="" /><br />
+              아이들에게 녹색미래를..
+            </div>
+          </div>
+
+          <div>
+            <div><img width="360px" height="255px" src="실습_사용이미지/main_img3.jpg" alt="" /><br />설악산을 살리는 길</div>
+            <div><img width="360px" height="255px" src="실습_사용이미지/main_img4.jpg" alt="" /><br />사라지는 북금곰들</div>
+          </div>
+        </div>
+        <!-- login -->
+        <div class="right">
+          <div class="login-wrap">
+            <div class="login-main">
+              <div class="login-left">
+                <div class="login-id">
+                  <input class="login-input-id" type="text" placeholder="ID를 입력하세요." />
+                </div>
+                <div class="login-pw">
+                  <input class="login-input-pw" type="text" placeholder="PW를 입력하세요." />
+                </div>
+              </div>
+              <div class="login-right">
+                <input type="submit" value="로그인" />
+              </div>
+            </div>
+
+            <div class="login-footer">
+              <a href="https://nid.naver.com/nidregister.form">회원가입</a>
+              <a href="https://nid.naver.com/user2/help/idInquiry.nhn">ID</a>
+              /
+              <a href="https://nid.naver.com/user2/help/pwInquiry.nhn">PW 찾기</a>
+            </div>
+          </div>
+          <!-- login -->
+          <br /><br />
+          <img width="319px" src="실습_사용이미지/right_img.jpg" alt="right_img" />
+          <div class="msg-head">나도 한마디</div>
+          <div class="msg-wrab">
+            <div class="msg-wrab-left">이름</div>
+            <div class="msg-wrab-right">메세지</div>
+          </div>
+          <div class="msg-content">
+            <div class="msg-content-left">
+              <div>길동이</div>
+              <div>영희</div>
+              <div>민수</div>
+              <div>철수</div>
+            </div>
+            <div class="msg-content-right">
+              <div>자연을 살리자!</div>
+              <div>곰이 불쌍해요.ㅜㅜ</div>
+              <div>ㄴ토끼도요 ㅜ.ㅜ</div>
+              <div>토끼 귀엽다.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer">&copy; Example from JAVA Web Developer Junior</div>
+    </div>
+
+    <hr />
+  </body>
+</html>

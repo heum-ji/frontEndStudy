@@ -1,32 +1,32 @@
-.edgeBlue {
+.left-top {
   border: 3px solid blue;
   border-right-style: dashed;
   border-bottom-style: dashed;
   border-top-left-radius: 30px;
 }
 
-.edgeGreen {
+.right-top {
   border: 3px solid green;
   border-left-style: dashed;
   border-bottom-style: dashed;
   border-top-right-radius: 23px;
 }
 
-.edgeYellow {
+.left-bottom {
   border: 3px solid yellow;
   border-right-style: dashed;
   border-top-style: dashed;
   border-bottom-left-radius: 30px;
 }
 
-.edgeRed {
+.right-bottom {
   border: 3px solid red;
   border-left-style: dotted;
   border-top-style: dotted;
   border-bottom-right-radius: 30px;
 }
 
-.edgeCenter {
+.center {
   border: 3px dotted plum;
 }
 
