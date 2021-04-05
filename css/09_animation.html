@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>09_animation</title>
+    <style>
+      .img1 {
+        margin: 100px;
+        width: 300px;
+        height: 300px;
+        animation-name: ani1;
+        animation-duration: 3s;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+      }
+      @keyframes ani1 {
+        from {
+        }
+        to {
+          transform: translateX(450px) rotate(360deg);
+        }
+      }
+      .div1 {
+        margin: 200px;
+        width: 300px;
+        height: 300px;
+        animation-name: ani2;
+        animation-duration: 3s;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+      }
+
+      @keyframes ani2 {
+        0% {
+        }
+        50% {
+          transform: translateY(-200px);
+        }
+        100% {
+          transform: translateX(-200px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h3>애니메이션</h3>
+    <img class="img1" src="image/dora.png" alt="dora" />
+    <hr />
+    <div class="div1">
+      <img class="img2" src="image/dora.png" alt="dora" />
+    </div>
+  </body>
+</html>
