@@ -1,0 +1,97 @@
+.main-img {
+  clear: left;
+  height: 900px;
+  background-image: url(../img/join-bg.jpg);
+  overflow: hidden;
+  position: relative;
+}
+
+.join-wrab {
+  width: 800px;
+  height: 700px;
+  background-color: rgba(255, 255, 255, 0.9);
+  margin: 0 auto;
+  margin-top: 100px;
+  border-radius: 10px;
+}
+.join-header {
+  height: 140px;
+  overflow: hidden;
+  text-align: center;
+}
+.join-header > h1 {
+  height: 30px;
+  line-height: 30px;
+  padding-top: 50px;
+}
+
+.join-content {
+  height: 560px;
+  text-align: center;
+}
+
+.join-content > form > table {
+  width: 600px;
+  margin: 0 auto;
+  border-top: 3px solid #1f4787;
+  text-align: center;
+}
+
+.join-content > form > table > tbody > tr {
+  height: 70px;
+}
+
+.join-content > form > table > tbody > tr > th {
+  width: 200px;
+}
+
+.join-content > form > table > tbody > tr > td {
+  width: 400px;
+  text-align: center;
+}
+
+.join-content > form > table input {
+  width: 320px;
+  height: 40px;
+}
+
+.join-content > form > table input[type="radio"] ~ label {
+  display: inline-block;
+  width: 158px;
+  height: 40px;
+  line-height: 40px;
+  border: 1px solid #b2b2b2;
+}
+.join-content > form > table input[type="radio"] {
+  display: none;
+}
+.join-content > form > table input[type="radio"]:checked + label {
+  background-color: #1f4787;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.join-content > form > input {
+  display: block;
+  width: 550px;
+  height: 60px;
+  margin: 0 auto;
+  border: 2px solid #38b684;
+  background-color: #fff;
+  color: #38b684;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 30px;
+}
+
+.join-content > form > table input:focus {
+  outline: none;
+  border: 2px solid red;
+}
+
+.join-content > form > input:hover {
+  background-color: #38b684;
+  color: #fff;
+  cursor: pointer;
+}

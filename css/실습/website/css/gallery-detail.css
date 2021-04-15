@@ -1,0 +1,99 @@
+.content {
+  width: 1200px;
+  height: 1425px;
+  background-image: url(../img/bg/bg-1.jpg);
+  background-size: cover;
+  padding-top: 25px;
+  margin: 0 auto;
+}
+.content-wrap {
+  height: 1450px;
+}
+
+.content-video {
+  width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+.content-video > iframe {
+  width: 600px;
+  height: 300px;
+}
+
+.content-board {
+  width: 595px;
+  margin: 0 auto;
+  text-align: center;
+  overflow: hidden;
+  margin-top: 20px;
+}
+.content-board > h2 {
+  font-size: 40px;
+  margin: 0;
+  padding-bottom: 20px;
+  border-bottom: 3px solid black;
+}
+.content-board > pre {
+  height: 180px;
+  line-height: 50px;
+  padding-top: 30px;
+  font-size: 30px;
+  border-bottom: 3px solid black;
+  margin: 0;
+}
+.content-board > .share-icon {
+  height: 32px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.content-board > .share-icon > a {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  border-radius: 35px;
+  margin-right: 50px;
+}
+.content-board > .share-icon > a:last-child {
+  margin: 0;
+}
+
+.content-board > .share-icon > a:hover {
+  transform: scale(1.2);
+  transition-duration: 0.5s;
+}
+
+.share-icon > a > img {
+  width: 100%;
+  height: 100%;
+}
+
+.comment-content {
+  width: 600px;
+  height: 160px;
+  margin: 0 auto;
+  margin-top: 10px;
+  padding-right: 2px;
+}
+.comment-content > textarea {
+  width: 592px;
+  height: 150px;
+  resize: none;
+  font-size: 25px;
+  border: 3px solid black;
+}
+
+.comment-submit {
+  width: 600px;
+  margin: 0 auto;
+  overflow: hidden;
+  margin-top: 10px;
+}
+.comment-submit > input {
+  float: right;
+  font-size: 30px;
+}
+.comment-submit > input:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+  transition-duration: 0.5s;
+  cursor: pointer;
+}

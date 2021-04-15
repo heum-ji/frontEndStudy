@@ -1,0 +1,146 @@
+* {
+  color: black;
+  font-family: "Nanum Pen Script", cursive;
+}
+.wrap {
+  width: 100%;
+  position: absolute;
+}
+
+body {
+  margin: 0;
+  cursor: url(../img/cursor/cursor-default.png), auto;
+}
+a {
+  display: block;
+  text-decoration: none;
+}
+a:hover {
+  cursor: url(../img/cursor/cursor-hover.png), auto;
+}
+
+.navi-wrap {
+  width: 100%;
+  height: 53px;
+  border-bottom: 2px solid black;
+  background-color: #aaa;
+  position: fixed;
+  z-index: 1000;
+}
+
+.content-wrap {
+  padding-top: 53px;
+}
+
+.content-back {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.footer-wrap {
+  top: 50px;
+  border-top: 2px solid black;
+  height: 100px;
+  background-color: #aaa;
+}
+
+.logo {
+  float: left;
+  width: 53px;
+  height: 53px;
+  background-image: url(../img/logo/cat-solid.svg);
+  background-color: transparent;
+  background-size: cover;
+}
+
+.navi {
+  width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.navi > ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 750px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.navi > ul > li {
+  float: left;
+}
+.navi > ul > li > a {
+  width: 150px;
+  height: 50px;
+  line-height: 53px;
+  text-align: center;
+  font-size: 34px;
+  margin: 0;
+  border-bottom: 3px solid transparent;
+}
+
+.navi > ul > li:hover > a {
+  border-bottom: 3px solid black;
+  font-weight: bold;
+  transform: scale(1.5);
+}
+
+.footer-wrap .footer {
+  width: 1200px;
+  height: 70px;
+  line-height: 70px;
+  margin: 0 auto;
+  padding-top: 15px;
+}
+.footer > p {
+  font-size: 16px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  margin: 0;
+  font-size: 24px;
+}
+
+.side-bar-wrap {
+  position: fixed;
+  top: 220px;
+  left: 100px;
+  width: 96px;
+  height: 262px;
+  border-radius: 20px;
+  background-color: #aaa;
+}
+.side-bar {
+  width: 96px;
+  height: 222px;
+  margin-top: 20px;
+}
+.side-bar > a {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  border-radius: 35px;
+}
+.side-bar > a:last-child {
+  margin-bottom: 0;
+}
+
+.side-bar > a:nth-child(2) {
+  border-radius: 22px;
+}
+.side-bar > a:hover {
+  transform: scale(1.2);
+  transition-duration: 0.5s;
+}
+.side-bar > a > img {
+  width: 100%;
+  height: 100%;
+  border-radius: 35px;
+}
+.side-bar > a:nth-child(2) > img {
+  border-radius: 22px;
+}

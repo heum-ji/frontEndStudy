@@ -1,0 +1,51 @@
+.content {
+  width: 1200px;
+  height: 700px;
+  background-image: url(../img/bg/bg-1.jpg);
+  background-size: cover;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  margin: 0 auto;
+}
+
+.content-wrap {
+  height: 900px;
+}
+
+.content > div {
+  float: left;
+  height: 400px;
+  padding-top: 25px;
+}
+
+.content-left {
+  width: 601px;
+  text-align: center;
+  border-right: 1px solid black;
+}
+.content-right {
+  width: 598px;
+  text-align: center;
+}
+
+.content img {
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  border: 1px solid black;
+  transition-duration: 2.5s;
+}
+.content img:hover {
+  transform: rotate(360deg);
+}
+
+.content-detail {
+  width: 300px;
+  margin: 0 auto;
+}
+.content table > tbody > tr > th {
+  width: 115px;
+  height: 30px;
+  font-size: 25px;
+  padding-left: 20px;
+}

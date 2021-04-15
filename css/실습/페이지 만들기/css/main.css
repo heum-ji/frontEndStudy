@@ -1,0 +1,75 @@
+.main-img {
+  clear: left;
+  height: 600px;
+  background-image: url(../img/main-bg.jpg);
+  background-size: cover;
+  position: relative;
+}
+
+.content {
+  width: 1180px;
+  margin: 0 auto;
+  padding: 50px 0 50px;
+  overflow: hidden;
+}
+.content > div {
+  width: 50%;
+  float: left;
+}
+.content > div > ul {
+  list-style-position: inside;
+}
+.content > div > ul > li {
+  width: 90%;
+  height: 35px;
+  line-height: 35px;
+}
+.content > div > h2 {
+  margin: 0 auto;
+  width: 90%;
+  border-bottom: 3px solid #38b684;
+}
+
+.footer {
+  background-color: #333;
+}
+.footer-top {
+  width: 1180px;
+  margin: 0 auto;
+  padding: 20px;
+  overflow: hidden;
+}
+.footer-top > h3,
+p {
+  color: #b2b2b2;
+  margin: 10px;
+}
+
+.footer-bottom {
+  border-top: 1px solid #b2b2b2;
+}
+.footer-bottom > ul {
+  width: 1180px;
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+  list-style-type: none;
+}
+.footer-bottom > ul > li {
+  float: left;
+}
+.footer-bottom > ul > li > a {
+  color: #b2b2b2;
+  font-size: 12px;
+  width: 150px;
+  height: 30px;
+  line-height: 30px;
+  border-left: 1px solid #b2b2b2;
+  border-right: 1px solid #b2b2b2;
+  text-align: center;
+  display: block;
+}
+
+.content > div > ul > li:hover {
+  text-decoration: underline;
+}

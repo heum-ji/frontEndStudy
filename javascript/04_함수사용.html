@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>04_함수사용</title>
+
+    <script>
+      function add() {
+        var numArr = document.getElementsByTagName("input");
+        var result = document.getElementById("result1");
+
+        result.innerHTML = Number(numArr[0].value) + Number(numArr[1].value);
+      }
+      function sub() {
+        var numArr = document.getElementsByTagName("input");
+        var result = document.getElementById("result1");
+
+        result.innerHTML = Number(numArr[0].value) - Number(numArr[1].value);
+      }
+      function mul() {
+        var numArr = document.getElementsByTagName("input");
+        var result = document.getElementById("result1");
+
+        result.innerHTML = Number(numArr[0].value) * Number(numArr[1].value);
+      }
+      function div() {
+        var numArr = document.getElementsByTagName("input");
+        var result = document.getElementById("result1");
+        Number(numArr[0].value) / Number(numArr[1].value);
+      }
+
+      function calc1(oper) {
+        var inputNum = document.getElementsByClassName("inputNum2");
+        var result1 = document.getElementById("result2");
+        var num1 = Number(inputNum[0].value);
+        var num2 = Number(inputNum[1].value);
+        var result;
+
+        if (oper == "+") {
+          result = num1 + num2;
+        } else if (oper == "-") {
+          result = num1 - num2;
+        } else if (oper == "*") {
+          result = num1 * num2;
+        } else {
+          result = num1 / num2;
+        }
+
+        result1.innerHTML = result;
+      }
+
+      function calc2(obj) {
+        var inputNum = document.getElementsByClassName("inputNum3");
+        var result1 = document.getElementById("result3");
+        var oper = obj.innerHTML;
+        var num1 = Number(inputNum[0].value);
+        var num2 = Number(inputNum[1].value);
+        var result;
+
+        if (oper == "+") {
+          result = num1 + num2;
+        } else if (oper == "-") {
+          result = num1 - num2;
+        } else if (oper == "*") {
+          result = num1 * num2;
+        } else {
+          result = num1 / num2;
+        }
+
+        result1.innerHTML = result;
+      }
+    </script>
+  </head>
+
+  <body>
+    <h1>함수 사용 방식</h1>
+    <hr />
+    <h2>계산기 만들기1</h2>
+    첫번째 수 입력 : <input type="text" class="inputNum1" /><br />
+    두번째 수 입력 : <input type="text" class="inputNum1" /><br />
+    <button onclick="add();">+</button>
+    <button onclick="sub();">-</button>
+    <button onclick="mul();">*</button>
+    <button onclick="div();">/</button>
+    <p id="result1"></p>
+    <hr />
+    <h2>계산기 만들기2</h2>
+    첫번째 수 입력 : <input type="text" class="inputNum2" /><br />
+    두번째 수 입력 : <input type="text" class="inputNum2" /><br />
+    <button onclick="calc1('+');">+</button>
+    <button onclick="calc1('-');">-</button>
+    <button onclick="calc1('*');">*</button>
+    <button onclick="calc1('/');">/</button>
+    <p id="result2"></p>
+    <hr />
+    <h2>계산기 만들기3</h2>
+    첫번째 수 입력 : <input type="text" class="inputNum3" /><br />
+    두번째 수 입력 : <input type="text" class="inputNum3" /><br />
+    <button onclick="calc2(this);">+</button>
+    <button onclick="calc2(this);">-</button>
+    <button onclick="calc2(this);">*</button>
+    <button onclick="calc2(this);">/</button>
+    <p id="result3"></p>
+  </body>
+</html>

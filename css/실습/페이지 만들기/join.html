@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>join</title>
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <link rel="stylesheet" type="text/css" href="css/join.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="header">
+        <div class="header-top">
+          <div class="head-left">
+            <a href="main.html">Lee's World</a>
+          </div>
+          <div class="head-right">
+            <a href="login.html">로그인</a>
+            <a href="join.html">회원가입</a>
+          </div>
+        </div>
+        <div class="header-bottom">
+          <div class="navi">
+            <ul>
+              <li><a href="#">JAVA</a></li>
+              <li><a href="#">ORACLE</a></li>
+              <li><a href="#">HTML5</a></li>
+              <li><a href="#">CSS3</a></li>
+              <li><a href="#">JavaScript</a></li>
+              <li><a href="#">jQuery</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="main-img">
+        <div class="main-effect">
+          <div class="join-wrab">
+            <div class="join-header">
+              <h1>회원가입</h1>
+            </div>
+            <div class="join-content">
+              <form action="#" method="POST" name="join_info">
+                <table>
+                  <tbody>
+                    <tr>
+                      <th>아이디</th>
+                      <td><input type="text" name="id" /></td>
+                    </tr>
+                    <tr>
+                      <th>비밀번호</th>
+                      <td><input type="password" name="pw" /></td>
+                    </tr>
+                    <tr>
+                      <th>비밀번호 확인</th>
+                      <td><input type="text" name="pw_check" /></td>
+                    </tr>
+                    <tr>
+                      <th>이름</th>
+                      <td><input type="text" name="name" /></td>
+                    </tr>
+                    <tr>
+                      <th>전화번호</th>
+                      <td><input type="text" name="phone" /></td>
+                    </tr>
+                    <tr>
+                      <th>성별</th>
+                      <td>
+                        <input type="radio" id="gender_m" name="gender" />
+                        <label for="gender_m">남자</label>
+                        <input type="radio" id="gender_w" name="gender" />
+                        <label for="gender_w">여자</label>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <input type="submit" value="가입하기" />
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <div class="footer-top">
+          <h3>KH정보교육원 당산지원 A-Class</h3>
+          <p>담당강사 : 이윤수</p>
+        </div>
+        <div class="footer-bottom">
+          <ul>
+            <li><a href="#">회사소개</a></li>
+            <li><a href="#">이용약관</a></li>
+            <li><a href="#">개인정보처리방침</a></li>
+            <li><a href="#">인재채용</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

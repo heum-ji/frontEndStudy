@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>0405_드롭다운메뉴</title>
+    <title>0405_02_드롭다운메뉴</title>
+
     <style>
       .navi {
         margin: 50px;
@@ -40,13 +41,12 @@
       .navi > ul > li:last-child > a {
         border-top-right-radius: 10px;
       }
-      /* 서브메뉴 효과 */
+
       .navi > ul > li:hover > .sub {
         height: 200px;
         transition-duration: 1s;
       }
 
-      /* 서브메뉴 초기화 */
       .sub {
         list-style-type: none;
         padding: 0;
@@ -54,7 +54,6 @@
         height: 0;
         overflow: hidden;
       }
-      /* 서브 메뉴 기본 값 */
       .sub > li > a {
         width: 100%;
         height: 100%;
@@ -63,12 +62,10 @@
         background-color: #234f32;
         color: #ffe761;
       }
-      /*테두리 깎기*/
       .sub > li:last-child > a {
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
       }
-      /* 서브메뉴 hover 효과 */
       .sub > li:hover > a {
         font-weight: bold;
       }

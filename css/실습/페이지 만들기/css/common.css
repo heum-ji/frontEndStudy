@@ -1,0 +1,127 @@
+* {
+  color: #282828;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header > div {
+  overflow: hidden;
+}
+.header-top {
+  width: 1180px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.head-left {
+  float: left;
+}
+.head-left > a {
+  display: block;
+  color: #1f4787;
+  font-size: 25px;
+  font-weight: bold;
+  height: 50px;
+  line-height: 50px;
+}
+
+.head-right {
+  float: right;
+  height: 50px;
+  line-height: 50px;
+}
+
+.head-right > a {
+  font-size: 14px;
+  margin: 20px;
+  text-align: center;
+}
+
+.header-bottom {
+  border-top: 1px solid #1e1e1e;
+  border-bottom: 1px solid #1e1e1e;
+}
+
+.navi {
+  width: 1180px;
+  margin: 0 auto;
+}
+
+.navi > ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.navi > ul > li {
+  float: left;
+}
+
+.navi > ul > li > a {
+  display: block;
+  width: calc(1180px / 6);
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-top: 3px solid transparent;
+}
+
+.navi > ul > li:hover > a {
+  border-top: 3px solid #1f4787;
+  color: #1f4787;
+  font-weight: bold;
+}
+.footer {
+  background-color: #333;
+}
+.footer-top {
+  width: 1180px;
+  margin: 0 auto;
+  padding: 20px;
+  overflow: hidden;
+}
+.footer-top > h3,
+.footer-top > p {
+  color: #b2b2b2;
+  margin: 10px;
+}
+
+.footer-bottom {
+  border-top: 1px solid #b2b2b2;
+}
+.footer-bottom > ul {
+  width: 1180px;
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+  list-style-type: none;
+}
+.footer-bottom > ul > li {
+  float: left;
+}
+.footer-bottom > ul > li > a {
+  color: #b2b2b2;
+  font-size: 12px;
+  width: 150px;
+  height: 30px;
+  line-height: 30px;
+  border-left: 1px solid #b2b2b2;
+  border-right: 1px solid #b2b2b2;
+  text-align: center;
+  display: block;
+}
+
+/*a태그 밑줄 hover 추가*/
+.footer-bottom > ul > li:hover {
+  text-decoration: underline;
+}
+.head-right > a:hover {
+  text-decoration: underline;
+}

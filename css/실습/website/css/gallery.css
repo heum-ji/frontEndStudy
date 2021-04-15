@@ -1,0 +1,94 @@
+.content {
+  width: 1200px;
+  height: 1000px;
+  background-image: url(../img/bg/bg-1.jpg);
+  background-size: cover;
+  padding-top: 100px;
+  margin: 0 auto;
+}
+
+.content-wrap {
+  height: 1100px;
+}
+
+.content a {
+  width: 250px;
+  height: 250px;
+  border-radius: 30px;
+  position: relative;
+  z-index: 100;
+}
+.background-hover {
+  width: 100%;
+  height: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 30px;
+}
+
+.hover-wrap {
+  width: 174px;
+  height: 0;
+  margin: 0 auto;
+  text-align: center;
+  overflow: hidden;
+  background-color: rgba(170, 170, 170, 0.5);
+  border-radius: 30px;
+  margin-top: 109px;
+}
+.hover-wrap > div {
+  float: left;
+  font-size: 30px;
+  margin: 0;
+  width: 32px;
+  height: 32px;
+  font-weight: bold;
+  margin-right: 20px;
+}
+.hover-wrap > div:last-child {
+  margin: 0;
+}
+
+.hover-wrap > img {
+  width: 32px;
+  height: 32px;
+  float: left;
+  margin-right: 3px;
+}
+
+.content a:hover .background-hover {
+  height: 250px;
+}
+.content a:hover .hover-wrap {
+  height: 36px;
+  padding-top: 4px;
+  padding-left: 20px;
+}
+.content > div > div > a > img {
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+}
+
+.content > div {
+  width: 770px;
+  height: 250px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+.content > div:last-child {
+  margin-bottom: 0;
+}
+
+.content > div > div {
+  float: left;
+  width: calc(750px / 3);
+  height: 100%;
+  margin-right: 10px;
+}
+.content > div > div:last-child {
+  margin-right: 0;
+}
