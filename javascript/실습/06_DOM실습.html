@@ -43,21 +43,22 @@
 
         function exam2() {
             // 내 풀이
+            // tbody 태그 생성
             var tbody = document.getElementsByTagName("tbody");
+            // tr 태그 생성
             var tr = document.createElement("tr");
-
+            // th 태그 생성
             var name = document.createElement("th");
             var age = document.createElement("th");
             var addr = document.createElement("th");
             var btnTh = document.createElement("th");
-
+            // 삭제 버튼 생성
             var btn = document.createElement("button");
 
+            // text 노트 생성 및 cnrk
             name.appendChild(document.createTextNode(prompt("이름입력")));
             age.appendChild(document.createTextNode(prompt("나이입력")));
             addr.appendChild(document.createTextNode(prompt("주소입력")));
-
-            // 버튼 생성
             btn.appendChild(document.createTextNode("삭제"));
             btn.onclick = function () {
                 tr.remove();
