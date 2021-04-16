@@ -21,6 +21,52 @@
       padding: 0;
       box-sizing: content-box;
     }
+
+    .slideImg {
+      transition-duration: 0.5s;
+      width: 500px;
+      height: 300px;
+      float: left;
+    }
+
+    .imgWrap {
+      width: 1500px;
+      overflow: hidden;
+    }
+
+    .slideWrap {
+      width: 500px;
+      overflow: hidden;
+    }
+
+    .slideWrap>button {
+      border: none;
+      background-color: coral;
+      color: #fff;
+      width: 100px;
+      height: 30px;
+      font-weight: bold;
+      font-size: 1.3em;
+      outline: none;
+    }
+
+    .slideWrap>button:disabled {
+      background-color: #3e3e3e;
+
+    }
+
+    .slideWrap>button:enabled {
+      cursor: pointer;
+    }
+
+    #prev {
+      float: left;
+
+    }
+
+    #next {
+      float: right;
+    }
   </style>
 
   <script>
@@ -34,6 +80,52 @@
           agree[i].checked = status;
         }
       });
+
+      var selectMail = document.getElementById("selectMail");
+      selectMail.addEventListener("change", function () {
+        var email2 = document.getElementsByName("email2");
+        email2[0].value = selectMail.value;
+      });
+
+      // 처음 버튼 active 체크
+      buttonActive();
+    }
+    var currentPage = 0;
+
+    function next() {
+      currentPage++;
+      changeImg(); // 이미지 이동
+      buttonActive(); // 버튼 활성화
+    }
+
+    function prev() {
+      currentPage--;
+      changeImg(); // 이미지 이동
+      buttonActive(); // 버튼 활성화
+    }
+
+    function buttonActive() {
+      var next = document.getElementById("next");
+      var prev = document.getElementById("prev");
+
+      // 전체 활성화
+      next.disabled = false;
+      prev.disabled = false;
+
+      if (currentPage == 0) {
+        prev.disabled = true; // 첫페이지 prev 비활성화
+      } else if (currentPage == 2) {
+        next.disabled = true; // 끝페이지 next 비활성화
+      }
+    }
+
+    function changeImg() {
+      var moveImg = 500 * currentPage * -1;
+      var slideImg = document.getElementsByClassName("slideImg");
+
+      for (var i = 0; i < slideImg.length; i++) {
+        slideImg[i].style.transform = "translateX(" + moveImg + "px)";
+      }
     }
   </script>
 </head>
@@ -43,16 +135,16 @@
   <div class="checkWrap">
     <input type="checkbox" id="allCheck"><label for="allCheck">전체체크</label>
     <p class="agree">
-      알고 계셨나요 ? KH 지역출신인 백지흠의 주먹은 누구보다 강하답니다.<br>
-      알고 계셨나요 ? KH 지역출신인 백지흠의 주먹은 누구보다 강하답니다.<br>
-      알고 계셨나요 ? KH 지역출신인 백지흠의 주먹은 누구보다 강하답니다.<br>
+      개인정보는 매우 중요한 정보니까 저희가 조심스럽게 팔아먹을게요.<br>
+      개인정보는 매우 중요한 정보니까 저희가 조심스럽게 팔아먹을게요.<br>
+      개인정보는 매우 중요한 정보니까 저희가 조심스럽게 팔아먹을게요.
     </p>
     <input type="checkbox" name="agree" id="privacy">
     <label for="privacy">개인정보 처리방침 동의</label>
     <p class="agree">
-      알고 계셨나요 ? KH 지역출신들 중 권용찬이란 인물과 백지흠과는 사이가 좋지 않습니다.<br>
-      가입은 맘대로 가능하지만 탈퇴는 아닙니다. 동의하실꺼죠?<br>
-      롤 그만해 지흠아 공부해라<br>
+      가입은 맘대로 가능하지만 탈퇴는 아닙니다 동의하실꺼죠?<br>
+      가입은 맘대로 가능하지만 탈퇴는 아닙니다 동의하실꺼죠?<br>
+      가입은 맘대로 가능하지만 탈퇴는 아닙니다 동의하실꺼죠?
     </p>
     <input type="checkbox" name="agree" id="join">
     <label for="join">회원가입약관동의</label>
@@ -70,6 +162,18 @@
       <option value="iei.or.kr">iei.or.kr</option>
     </select>
   </div>
+  <hr>
+  <h2>3. 이미지 슬라이드</h2>
+  <div class="slideWrap">
+    <div class="imgWrap">
+      <img src="img/join-bg.jpg" class="slideImg">
+      <img src="img/main-bg.jpg" class="slideImg">
+      <img src="img/login-bg.jpg" class="slideImg">
+    </div>
+    <button id="prev" onclick="prev();">prev</button>
+    <button id="next" onclick="next();">next</button>
+  </div>
+
 </body>
 
 </html>
