@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border: 1px solid black;
+        }
+
+        th,
+        td {
+            width: 100px;
+            border: 1px solid black;
+        }
+    </style>
+
+    <script>
+        function exam1() {
+            // 내 풀이
+            var tbody = document.getElementsByTagName("tbody");
+            var tr = document.createElement("tr");
+
+            var name = document.createElement("th");
+            var age = document.createElement("th");
+            var addr = document.createElement("th");
+
+            name.appendChild(document.createTextNode(prompt("이름입력")));
+            age.appendChild(document.createTextNode(prompt("나이입력")));
+            addr.appendChild(document.createTextNode(prompt("주소입력")));
+
+            tr.appendChild(name);
+            tr.appendChild(age);
+            tr.appendChild(addr);
+
+            tbody[0].appendChild(tr);
+
+            var btn = document.createElement("<button>삭제하기</button>");
+        }
+
+        function exam2() {
+            // 내 풀이
+            var tbody = document.getElementsByTagName("tbody");
+            var tr = document.createElement("tr");
+
+            var name = document.createElement("th");
+            var age = document.createElement("th");
+            var addr = document.createElement("th");
+            var btnTh = document.createElement("th");
+
+            var btn = document.createElement("button");
+
+            name.appendChild(document.createTextNode(prompt("이름입력")));
+            age.appendChild(document.createTextNode(prompt("나이입력")));
+            addr.appendChild(document.createTextNode(prompt("주소입력")));
+
+            // 버튼 생성
+            btn.appendChild(document.createTextNode("삭제"));
+            btn.onclick = function () {
+                tr.remove();
+            }
+
+            // 버튼 th 감싸기
+            btnTh.appendChild(btn);
+
+            // tr 넣어주기
+            tr.appendChild(name);
+            tr.appendChild(age);
+            tr.appendChild(addr);
+            tr.appendChild(btnTh);
+
+            tbody[1].appendChild(tr);
+        }
+    </script>
+</head>
+
+<body>
+    <h1>DOM 실습</h1>
+    <hr>
+    <h3>문제1. 추가 버튼을 클릭하면 prompt를 이용하여 이름,나이,주소를 입력받은 후 테이블에 추가</h3>
+    <table id="exam1">
+        <tr>
+            <th>이름</th>
+            <th>나이</th>
+            <th>주소</th>
+        </tr>
+    </table>
+    <button onclick="exam1();">추가하기</button>
+    <hr>
+    <br><br>
+    <h3>문제2. 추가 버튼을 클릭하면 prompt를 이용하여 이름,나이,주소를 입력받은 후 테이블에 추가하며 삭제버튼을 함께 추가</h3>
+    <table id="exam2">
+        <tr>
+            <th>이름</th>
+            <th>나이</th>
+            <th>주소</th>
+            <th>삭제</th>
+        </tr>
+    </table>
+    <button onclick="exam2();">추가하기</button>
+</body>
+
+</html>
