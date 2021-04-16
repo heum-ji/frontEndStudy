@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11_자바스크립트사용</title>
+  <style>
+    .agree {
+      border: 1px solid black;
+      width: 300px;
+      height: 150px;
+    }
+
+    .emailWrap>* {
+      border: 1px solid #3e3e3e;
+      width: 200px;
+      height: 30px;
+      line-height: 30px;
+      padding: 0;
+      box-sizing: content-box;
+    }
+  </style>
+
+  <script>
+    window.onload = function () {
+      var allCheck = document.getElementById("allCheck");
+      allCheck.addEventListener("click", function () {
+        var agree = document.getElementsByName("agree");
+        var status = this.checked; // 현재 전체체크 체크박스
+
+        for (var i = 0; i < agree.length; i++) {
+          agree[i].checked = status;
+        }
+      });
+    }
+  </script>
+</head>
+
+<body>
+  <h2>1. 체크박스 전체 체크</h2>
+  <div class="checkWrap">
+    <input type="checkbox" id="allCheck"><label for="allCheck">전체체크</label>
+    <p class="agree">
+      알고 계셨나요 ? KH 지역출신인 백지흠의 주먹은 누구보다 강하답니다.<br>
+      알고 계셨나요 ? KH 지역출신인 백지흠의 주먹은 누구보다 강하답니다.<br>
+      알고 계셨나요 ? KH 지역출신인 백지흠의 주먹은 누구보다 강하답니다.<br>
+    </p>
+    <input type="checkbox" name="agree" id="privacy">
+    <label for="privacy">개인정보 처리방침 동의</label>
+    <p class="agree">
+      알고 계셨나요 ? KH 지역출신들 중 권용찬이란 인물과 백지흠과는 사이가 좋지 않습니다.<br>
+      가입은 맘대로 가능하지만 탈퇴는 아닙니다. 동의하실꺼죠?<br>
+      롤 그만해 지흠아 공부해라<br>
+    </p>
+    <input type="checkbox" name="agree" id="join">
+    <label for="join">회원가입약관동의</label>
+  </div>
+  <hr>
+  <h2>2. 이메일 입력</h2>
+  <div class="emailWrap">
+    <input type="text" name="email1">
+    @
+    <input type="text" name="email2">
+    <select id="selectMail">
+      <option value="">직접입력</option>
+      <option value="gmail.com">gmail.com</option>
+      <option value="naver.com">naver.com</option>
+      <option value="iei.or.kr">iei.or.kr</option>
+    </select>
+  </div>
+</body>
+
+</html>
