@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>main</title>
+
+  <style>
+    .wrap {
+      width: 1003px;
+      margin: 0 auto;
+      margin-top: 50px;
+      overflow: hidden;
+      border: 1px solid #d8d8d8;
+    }
+
+    .tab-content-wrap {
+      width: 950px;
+      margin: 0 auto;
+      margin-top: 20px;
+    }
+
+    .btn-center {
+      text-align: center;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    .btn-center>button {
+      width: 120px;
+      height: 35px;
+      border: none;
+      background-color: #1f4787;
+      color: #fbfcfd;
+      font-weight: bold;
+    }
+
+    .tabs {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      overflow: hidden;
+    }
+
+    .tab {
+      border: 1px solid #d8d8d8;
+      border-top: 7px solid transparent;
+      border-left: none;
+      width: calc(1000px/4);
+      height: 50px;
+      line-height: 42px;
+      text-align: center;
+      float: left;
+    }
+
+    .tab:first-child {
+      border-left: none;
+      border-bottom: none;
+      border-top: 7px solid #1f4787;
+      color: #1f4787;
+      font-weight: bold;
+    }
+
+    .tab:last-child {
+      border-left: none;
+      border-right: none;
+    }
+
+    /* 처음에 안보이기 */
+    .tab-content {
+      display: none;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    label>span {
+      color: #1f4787;
+      font-weight: bold;
+    }
+
+    .info {
+      border: 1px solid black;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .info>li {
+      margin-bottom: 5px;
+    }
+
+    h2 {
+      color: #1f4787;
+    }
+  </style>
+
+  <script>
+    window.onload = function () {
+      var tabContents = document.getElementsByClassName("tab-content");
+      var tabs = document.getElementsByClassName("tab");
+      //
+      tabContents[0].style.display = "block";
+
+      // 이용약관 전체 체크 기능
+      var allCheck = document.getElementById("allCheck");
+      allCheck.addEventListener("click", function () {
+        var agree = document.getElementsByName("agree");
+        var status = this.checked; // 현재 전체체크 체크박스
+
+        for (var i = 0; i < agree.length; i++) {
+          agree[i].checked = status;
+        }
+      });
+    }
+  </script>
+</head>
+
+<body>
+  <h1>단계가 있는 회원가입</h1>
+  <p>최초에 전역변수에 배열을 선언하고 중복체크용 아이디 5개 push하고 시작</p>
+  <hr>
+  <div class="wrap">
+
+    <div class="tab-wrap">
+      <ul class="tabs">
+        <li class="tab">약관확인</li>
+        <li class="tab">필수정보입력</li>
+        <li class="tab">상세정보입력</li>
+        <li class="tab">가입완료</li>
+      </ul>
+    </div>
+
+    <div class="tab-content-wrap">
+      <div class="tab-content">
+        <h2>이용약관 확인 및 동의</h2>
+
+        <input type="checkbox" id="allCheck"><label for="allCheck"> 이용약관 전체체크</label><br><br>
+
+        <input type="checkbox" name="agree" id="privacy">
+        <label for="privacy">개인정보 수집 및 이용에
+          동의<span> (필수)</span></label>
+        <ul class="info">
+          <li>수집항목 : 이름, 휴대전화번호,생년월일,비밀번호</li>
+          <li>수집·이용목적:회원제 서비스 제공</li>
+          <li>보유 및 이용기간 : 회원탈퇴 시 까지</li>
+        </ul>
+
+        <input type="checkbox" name="agree" id="privacy2">
+        <label for="privacy2">개인정보 수집 및 이용에
+          동의<span> (선택)</span></label>
+        <ul class="info">
+          <li>수집항목 : 이름, 휴대전화번호,생년월일,비밀번호</li>
+          <li>수집·이용목적:회원제 서비스 제공</li>
+          <li>보유 및 이용기간 : 회원탈퇴 시 까지</li>
+        </ul>
+        <div class="btn-center">
+          <button>다음</button>
+        </div>
+
+      </div>
+
+      <div class="tab-content">필수정보입력</div>
+      <div class="tab-content">상세정보입력</div>
+      <div class="tab-content">가입완료</div>
+    </div>
+  </div>
+
+
+</body>
+
+</html>
