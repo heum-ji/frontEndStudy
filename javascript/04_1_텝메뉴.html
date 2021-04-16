@@ -1,78 +1,91 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>04_1_텝메뉴</title>
 
-    <style>
-      .tabMenu {
-        width: 500px;
-        background-color: lightblue;
-        padding: 10px;
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>04_1_텝메뉴</title>
+
+  <style>
+    .tabMenu {
+      width: 500px;
+      background-color: lightblue;
+      padding: 10px;
+    }
+
+    .tabs {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      list-style-type: none;
+    }
+
+    .tab {
+      border: 1px solid black;
+      background-color: transparent;
+      width: 100px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      float: left;
+      margin-right: 10px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      transition-duration: 0.5s;
+    }
+
+    .tab:hover {
+      cursor: pointer;
+    }
+
+    .tabContent {
+      width: 500px;
+      height: 300px;
+      background-color: #fff;
+      display: none;
+    }
+  </style>
+
+  <script>
+    function selectTab(idx) {
+      var tabContents = document.getElementsByClassName("tabContent");
+      var tabs = document.getElementsByClassName("tab");
+
+      for (var i = 0; i < tabContents.length; i++) {
+        tabs[i].style.border = "1px solid black";
+        tabs[i].style.backgroundColor = "transparent";
+        tabContents[i].style.display = "none";
       }
-      .tabs {
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        list-style-type: none;
-      }
 
-      .tab {
-        border: 1px solid black;
-        background-color: transparent;
-        width: 100px;
-        height: 30px;
-        line-height: 30px;
-        text-align: center;
-        float: left;
-        margin-right: 10px;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-        transition-duration: 0.5s;
-      }
+      tabs[idx].style.borderBottom = "none";
+      tabs[idx].style.border = "1px solid #fff";
+      tabs[idx].style.backgroundColor = "lightcoral";
+      tabContents[idx].style.display = "block";
+    }
+    window.onload = function () {
+      var tabContents = document.getElementsByClassName("tabContent");
+      var tabs = document.getElementsByClassName("tab");
 
-      .tab:hover {
-        cursor: pointer;
-      }
+      tabs[0].style.border = "1px solid #fff";
+      tabs[0].style.backgroundColor = "lightcoral";
+      tabContents[0].style.display = "block";
 
-      .tabContent {
-        width: 500px;
-        height: 300px;
-        background-color: #fff;
-        display: none;
-      }
-    </style>
+    }
+  </script>
+</head>
 
-    <script>
-      function selectTab(idx) {
-        var tabContents = document.getElementsByClassName("tabContent");
-        var tabs = document.getElementsByClassName("tab");
+<body>
+  <div class="tabMenu">
+    <ul class="tabs">
+      <li class="tab" onclick="selectTab(0);">메뉴1</li>
+      <li class="tab" onclick="selectTab(1);">메뉴2</li>
+      <li class="tab" onclick="selectTab(2);">메뉴3</li>
+    </ul>
+    <div class="tabContent">메뉴1번 해당내용</div>
+    <div class="tabContent">메뉴2번 해당내용</div>
+    <div class="tabContent">메뉴3번 해당내용</div>
+  </div>
+</body>
 
-        for (var i = 0; i < tabContents.length; i++) {
-          tabs[i].style.border = "1px solid black";
-          tabs[i].style.backgroundColor = "transparent";
-          tabContents[i].style.display = "none";
-        }
-
-        tabs[idx].style.borderBottom = "none";
-        tabs[idx].style.border = "1px solid #fff";
-        tabs[idx].style.backgroundColor = "lightcoral";
-        tabContents[idx].style.display = "block";
-      }
-    </script>
-  </head>
-  <body>
-    <div class="tabMenu">
-      <ul class="tabs">
-        <li class="tab" onclick="selectTab(0);">메뉴1</li>
-        <li class="tab" onclick="selectTab(1);">메뉴2</li>
-        <li class="tab" onclick="selectTab(2);">메뉴3</li>
-      </ul>
-      <div class="tabContent">메뉴1번 해당내용</div>
-      <div class="tabContent">메뉴2번 해당내용</div>
-      <div class="tabContent">메뉴3번 해당내용</div>
-    </div>
-  </body>
 </html>
