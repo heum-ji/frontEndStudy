@@ -22,9 +22,58 @@
       margin-top: 20px;
     }
 
+    .login-wrap {
+      width: 480px;
+      margin: 0 auto;
+      margin-top: 50px;
+      margin-bottom: 50px;
+      display: none;
+    }
+
+    .login-wrap>p {
+      font-weight: bold;
+    }
+
+    .login-wrap>input {
+      width: 460px;
+      height: 25px;
+      line-height: 25px;
+      border: 1px solid #b3b3b3;
+      margin-bottom: 30px;
+    }
+
+    .login-wrap>div {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .login-wrap>div>button {
+      text-align: center;
+      width: 467px;
+      height: 35px;
+      border: none;
+      background-color: #1f4787;
+      color: #fbfcfd;
+      font-weight: bold;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
     .btn-center {
       text-align: center;
       margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    .btn-login>button {
+      width: 130px;
+      height: 35px;
+      border: none;
+      background-color: #1f4787;
+      color: #fbfcfd;
+      font-weight: bold;
+      font-size: 14px;
+      margin-top: 30px;
       margin-bottom: 20px;
     }
 
@@ -103,7 +152,6 @@
       color: #1f4787;
     }
 
-    /* step2 */
     .info-input {
       overflow: hidden;
       border-top: 1px solid #1f4787;
@@ -151,22 +199,16 @@
       width: 400px;
       height: 30px;
       margin-left: 1px;
-      /* margin-top: 1px; */
+
     }
 
     .info-input-right>div>span {
       margin-left: 10px;
     }
 
-    /* STEP3 */
-    .email-wrap {
-      /* overflow: hidden; */
-    }
-
     .email>input {
       width: 200px;
       height: 20px;
-
     }
 
     .radio-wrap>input {
@@ -324,9 +366,10 @@
       });
 
       // STEP4
-      // step[STEP4].addEventListener("click", function () {
-      //   console.log("얍4");
-      // });
+      step[STEP4].addEventListener("click", function () {
+        var login = document.getElementsByClassName("login-wrap");
+        login[0].style.display = "block";
+      });
     }
   </script>
 </head>
@@ -397,6 +440,7 @@
           <button class="step">다음</button>
         </div>
       </div>
+
       <!-- 상세정보입력 -->
       <div class="tab-content">
         <h2>추가정보입력</h2>
@@ -438,11 +482,28 @@
           <button class="step">다음</button>
         </div>
       </div>
+
       <!-- 가입완료 -->
-      <div class="tab-content">가입완료</div>
+      <div class="tab-content">
+        <h2>가입을 축하합니다.</h2>
+
+        <div class="btn-login">
+          <button class="step">로그인하기</button>
+        </div>
+
+        <div class="login-wrap">
+          <p>아이디</p>
+          <input type="text">
+          <p>비밀번호</p>
+          <input type="text">
+          <div><button>로그인</button></div>
+          <div><button>취소</button></div>
+        </div>
+      </div>
     </div>
   </div>
 
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 </body>
 
