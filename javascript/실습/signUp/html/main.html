@@ -103,8 +103,6 @@
       color: #1f4787;
     }
 
-    /* #ebebeb */
-
     /* step2 */
     .info-input {
       overflow: hidden;
@@ -122,7 +120,9 @@
       padding: 10px;
       padding-left: 40px;
       height: 20px;
+      line-height: 20px;
       color: #282828;
+      font-weight: bold;
       border-bottom: 1px solid #ebebeb;
       border-right: 1px solid #ebebeb;
     }
@@ -138,16 +138,59 @@
     }
 
     .info-input-right>div {
-      height: 40px;
       line-height: 40px;
+      overflow: hidden;
       border-bottom: 1px solid #ebebeb;
-      /* border-right: 1px solid #ebebeb; */
+    }
+
+    .info-input-right>div:last-child {
+      border-bottom: 0;
     }
 
     .info-input-right>div>input {
       width: 400px;
       height: 30px;
       margin-left: 1px;
+      /* margin-top: 1px; */
+    }
+
+    .info-input-right>div>span {
+      margin-left: 10px;
+    }
+
+    /* STEP3 */
+    .email-wrap {
+      /* overflow: hidden; */
+    }
+
+    .email>input {
+      width: 200px;
+      height: 20px;
+
+    }
+
+    .radio-wrap>input {
+      display: none;
+    }
+
+    .radio-wrap>input:checked+label {
+      background-color: #1f4787;
+      color: #fbfcfd;
+    }
+
+    .radio-wrap>label {
+      display: inline-block;
+      text-align: center;
+      width: 100px;
+      height: 35px;
+      line-height: 35px;
+      border: 1px solid #1f4787;
+      color: #1f4787;
+      font-weight: bold;
+    }
+
+    .radio-wrap>label:hover {
+      cursor: pointer;
     }
   </style>
 
@@ -160,43 +203,12 @@
 
       var tabs = document.getElementsByClassName("tab"); // 상단 텝 메뉴
       var tabContents = document.getElementsByClassName("tab-content"); // 텝 내용
+      var step = document.getElementsByClassName("step");// 다음 버튼 불러오기
 
       // 첫번째 텝내용 보여주기
-      tabContents[0].style.display = "block";
+      tabContents[STEP1].style.display = "block";
 
-      // 약관확인 전체 체크 기능
-      var allCheck = document.getElementById("allCheck");
-      allCheck.addEventListener("click", function () {
-        var agree = document.getElementsByName("agree");
-        var status = this.checked; // 현재 전체체크 체크박스
-
-        for (var i = 0; i < agree.length; i++) {
-          agree[i].checked = status;
-        }
-      });
-
-      // 다음 버튼 불러오기
-      var step = document.getElementsByClassName("step");
-
-      // 약관확인
-      step[STEP1].addEventListener("click", function () {
-        var requirePrivacy = document.getElementById("requirePrivacy"); // 필수 항목
-
-        if (requirePrivacy.checked) { // 필수항목 체크 완료
-          setTab(STEP1, STEP2); // tab CSS 변경 및 tabContent 내용 변경
-        } else { // 필수 항목 체크 실패
-          alert("이용약관 동의를 체크해주세요");
-        }
-      });
-
-      // step[STEP3].addEventListener("click", function () {
-      //   console.log("얍3");
-      // });
-
-      // step[STEP4].addEventListener("click", function () {
-      //   console.log("얍4");
-      // });
-
+      // COMMON
       // tab CSS 변경 및 tabContent 내용 변경
       function setTab(prevStep, nextStep) {
         // 이전 단계 css
@@ -215,16 +227,37 @@
         tabContents[nextStep].style.display = "block";
       }
 
+      // STEP1
+      step[STEP1].addEventListener("click", function () {
+        var requirePrivacy = document.getElementById("requirePrivacy"); // 필수 항목
+
+        if (requirePrivacy.checked) { // 필수항목 체크 완료
+          setTab(STEP1, STEP2); // tab CSS 변경 및 tabContent 내용 변경
+        } else { // 필수 항목 체크 실패
+          alert("이용약관 동의를 체크해주세요");
+        }
+      });
+
+      // 전체 체크 기능
+      var allCheck = document.getElementById("allCheck");
+      allCheck.addEventListener("click", function () {
+        var agree = document.getElementsByName("agree");
+        var status = this.checked; // 현재 전체체크 체크박스
+
+        for (var i = 0; i < agree.length; i++) {
+          agree[i].checked = status;
+        }
+      });
+
+      // STEP2
       var users = ['user01', 'user02', 'user03', 'user04', 'user05']; // id 중복 체크용 배열
       var idChk1 = false; // id 중복체크
       var pwChk1 = false; // pw 값 확인
-
       // id 중복 체크
       var id = document.getElementById("id");
       id.addEventListener("keyup", function () {
         var idChk = users.indexOf(this.value);
         var idChkMsg = document.getElementById("idCheckMsg");
-
         // 값이 입력될 때 확인
         if (idChk == -1) {  // 통과
           idChkMsg.innerHTML = " 사용 가능한 아이디 입니다.";
@@ -247,7 +280,6 @@
         var pw = document.getElementById("pw");
         var pwChkMsg = document.getElementById("pwCheckMsg");
 
-        console.log(pw.value + this.value);
         if (pw.value == this.value) { // 일치
           pwChkMsg.innerHTML = " 패스워드가 일치합니다.";
           pwChkMsg.style.color = "blue";
@@ -279,6 +311,22 @@
           alert("모든 정보를 확인해주세요.")
         }
       });
+
+      // STEP3
+      var selectMail = document.getElementById("selectMail");
+      selectMail.addEventListener("change", function () {
+        var email = document.getElementById("email");
+        email.value = selectMail.value;
+      });
+
+      step[STEP3].addEventListener("click", function () {
+        setTab(STEP3, STEP4);
+      });
+
+      // STEP4
+      // step[STEP4].addEventListener("click", function () {
+      //   console.log("얍4");
+      // });
     }
   </script>
 </head>
@@ -351,7 +399,44 @@
       </div>
       <!-- 상세정보입력 -->
       <div class="tab-content">
-        <h2>필수정보입력</h2>
+        <h2>추가정보입력</h2>
+
+        <div class="info-input">
+          <div class="info-input-left">
+            <div>이메일</div>
+            <div>성별</div>
+            <div>자기소개</div>
+          </div>
+
+          <div class="info-input-right">
+            <div class="email-wrap">
+              <div class="email">
+                <input type="text">
+                @
+                <input type="text" id="email">
+                <select id="selectMail" style="width: 100px; height: 25px;">
+                  <option value="">직접입력</option>
+                  <option value="gmail.com">gmail.com</option>
+                  <option value="naver.com">naver.com</option>
+                  <option value="iei.or.kr">iei.or.kr</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <div class="radio-wrap">
+                <input type="radio" name="gender" id="m" value="남자" checked><label for="m">남자</label>
+                <input type="radio" name="gender" id="w" value="여자"><label for="w">여자</label>
+              </div>
+            </div>
+            <div>
+              <div><textarea style="resize: none;" cols="80" rows="15"></textarea></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="btn-center">
+          <button class="step">다음</button>
+        </div>
       </div>
       <!-- 가입완료 -->
       <div class="tab-content">가입완료</div>
