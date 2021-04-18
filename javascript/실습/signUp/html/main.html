@@ -29,12 +29,17 @@
     }
 
     .btn-center>button {
-      width: 120px;
+      width: 130px;
       height: 35px;
       border: none;
       background-color: #1f4787;
       color: #fbfcfd;
       font-weight: bold;
+      font-size: 14px;
+    }
+
+    button {
+      cursor: pointer;
     }
 
     .tabs {
@@ -46,19 +51,18 @@
 
     .tab {
       border: 1px solid #d8d8d8;
-      border-top: 7px solid transparent;
+      border-top: 10px solid transparent;
       border-left: none;
       width: calc(1000px/4);
       height: 50px;
-      line-height: 42px;
+      line-height: 40px;
       text-align: center;
       float: left;
     }
 
     .tab:first-child {
-      border-left: none;
       border-bottom: none;
-      border-top: 7px solid #1f4787;
+      border-top: 10px solid #1f4787;
       color: #1f4787;
       font-weight: bold;
     }
@@ -95,18 +99,72 @@
     }
 
     h2 {
+      margin-top: 50px;
       color: #1f4787;
+    }
+
+    /* #ebebeb */
+
+    /* step2 */
+    .info-input {
+      overflow: hidden;
+      border-top: 1px solid #1f4787;
+      border-bottom: 1px solid #b3b3b3;
+    }
+
+    .info-input-left {
+      width: 25%;
+      float: left;
+      overflow: hidden;
+    }
+
+    .info-input-left>div {
+      padding: 10px;
+      padding-left: 40px;
+      height: 20px;
+      color: #282828;
+      border-bottom: 1px solid #ebebeb;
+      border-right: 1px solid #ebebeb;
+    }
+
+    .info-input-left>div:last-child {
+      border-bottom: 0;
+    }
+
+    .info-input-right {
+      width: 75%;
+      float: left;
+      overflow: hidden;
+    }
+
+    .info-input-right>div {
+      height: 40px;
+      line-height: 40px;
+      border-bottom: 1px solid #ebebeb;
+      /* border-right: 1px solid #ebebeb; */
+    }
+
+    .info-input-right>div>input {
+      width: 400px;
+      height: 30px;
+      margin-left: 1px;
     }
   </style>
 
   <script>
     window.onload = function () {
-      var tabContents = document.getElementsByClassName("tab-content");
-      var tabs = document.getElementsByClassName("tab");
-      //
+      const STEP1 = 0; // 약관확인
+      const STEP2 = 1; // 필수정보입력
+      const STEP3 = 2; // 상세정보입력
+      const STEP4 = 3; // 가입완료
+
+      var tabs = document.getElementsByClassName("tab"); // 상단 텝 메뉴
+      var tabContents = document.getElementsByClassName("tab-content"); // 텝 내용
+
+      // 첫번째 텝내용 보여주기
       tabContents[0].style.display = "block";
 
-      // 이용약관 전체 체크 기능
+      // 약관확인 전체 체크 기능
       var allCheck = document.getElementById("allCheck");
       allCheck.addEventListener("click", function () {
         var agree = document.getElementsByName("agree");
@@ -114,6 +172,111 @@
 
         for (var i = 0; i < agree.length; i++) {
           agree[i].checked = status;
+        }
+      });
+
+      // 다음 버튼 불러오기
+      var step = document.getElementsByClassName("step");
+
+      // 약관확인
+      step[STEP1].addEventListener("click", function () {
+        var requirePrivacy = document.getElementById("requirePrivacy"); // 필수 항목
+
+        if (requirePrivacy.checked) { // 필수항목 체크 완료
+          setTab(STEP1, STEP2); // tab CSS 변경 및 tabContent 내용 변경
+        } else { // 필수 항목 체크 실패
+          alert("이용약관 동의를 체크해주세요");
+        }
+      });
+
+      // step[STEP3].addEventListener("click", function () {
+      //   console.log("얍3");
+      // });
+
+      // step[STEP4].addEventListener("click", function () {
+      //   console.log("얍4");
+      // });
+
+      // tab CSS 변경 및 tabContent 내용 변경
+      function setTab(prevStep, nextStep) {
+        // 이전 단계 css
+        tabs[prevStep].style.borderBottom = "1px solid #d8d8d8";
+        tabs[prevStep].style.borderTop = "10px solid transparent";
+        tabs[prevStep].style.color = "black";
+        tabs[prevStep].style.fontWeight = "normal";
+        // 다음 단계 css
+        tabs[nextStep].style.borderBottom = "none";
+        tabs[nextStep].style.borderTop = "10px solid #1f4787";
+        tabs[nextStep].style.color = "#1f4787";
+        tabs[nextStep].style.fontWeight = "bold";
+
+        // tab-content 내용 변경
+        tabContents[prevStep].style.display = "none";
+        tabContents[nextStep].style.display = "block";
+      }
+
+      var users = ['user01', 'user02', 'user03', 'user04', 'user05']; // id 중복 체크용 배열
+      var idChk1 = false; // id 중복체크
+      var pwChk1 = false; // pw 값 확인
+
+      // id 중복 체크
+      var id = document.getElementById("id");
+      id.addEventListener("keyup", function () {
+        var idChk = users.indexOf(this.value);
+        var idChkMsg = document.getElementById("idCheckMsg");
+
+        // 값이 입력될 때 확인
+        if (idChk == -1) {  // 통과
+          idChkMsg.innerHTML = " 사용 가능한 아이디 입니다.";
+          idChkMsg.style.color = "blue";
+          idChkMsg.style.fontWeight = "bold";
+          this.style.border = "1px solid blue"
+          idChk1 = true;
+        } else { // 중복
+          idChkMsg.innerHTML = " 이미 사용중인 아이디 입니다.";
+          idChkMsg.style.color = "red";
+          idChkMsg.style.fontWeight = "bold";
+          this.style.border = "1px solid red"
+          idChk1 = false;
+        }
+      });
+
+      // pw 값 체크 (change 될 때 마다)
+      var pwRe = document.getElementById("pwRe");
+      pwRe.addEventListener("change", function () {
+        var pw = document.getElementById("pw");
+        var pwChkMsg = document.getElementById("pwCheckMsg");
+
+        console.log(pw.value + this.value);
+        if (pw.value == this.value) { // 일치
+          pwChkMsg.innerHTML = " 패스워드가 일치합니다.";
+          pwChkMsg.style.color = "blue";
+          pwChkMsg.style.fontWeight = "bold";
+          this.style.border = "1px solid blue";
+          pwChk1 = true;
+        } else { // 일치 X
+          pwChkMsg.innerHTML = " 패스워드가 일치하지 않습니다.";
+          pwChkMsg.style.color = "red";
+          pwChkMsg.style.fontWeight = "bold";
+          this.style.border = "1px solid red";
+          pwChk1 = false;
+        }
+      });
+
+      step[STEP2].addEventListener("click", function () {
+        var input = document.getElementsByName("input");
+        var inputCheck = true;
+
+        for (var i = 0; i < input.length; i++) {
+          if (input[i].value == "") {
+            inputCheck = false;
+          }
+        }
+
+        if (inputCheck && idChk1 && pwChk1) {
+          setTab(STEP2, STEP3);
+        } else {
+          alert("모든 정보를 확인해주세요.")
         }
       });
     }
@@ -136,36 +299,61 @@
     </div>
 
     <div class="tab-content-wrap">
+      <!-- 약관확인 -->
       <div class="tab-content">
         <h2>이용약관 확인 및 동의</h2>
 
         <input type="checkbox" id="allCheck"><label for="allCheck"> 이용약관 전체체크</label><br><br>
 
+        <input type="checkbox" name="agree" id="requirePrivacy">
+        <label for="requirePrivacy">개인정보 수집 및 이용에 동의<span> (필수)</span></label>
+        <ul class="info">
+          <li>수집항목 : 이름, 휴대전화번호,생년월일,비밀번호</li>
+          <li>수집·이용목적:회원제 서비스 제공</li>
+          <li>보유 및 이용기간 : 회원탈퇴 시 까지</li>
+        </ul>
+
         <input type="checkbox" name="agree" id="privacy">
-        <label for="privacy">개인정보 수집 및 이용에
-          동의<span> (필수)</span></label>
+        <label for="privacy">개인정보 수집 및 이용에 동의<span> (선택)</span></label>
         <ul class="info">
           <li>수집항목 : 이름, 휴대전화번호,생년월일,비밀번호</li>
           <li>수집·이용목적:회원제 서비스 제공</li>
           <li>보유 및 이용기간 : 회원탈퇴 시 까지</li>
         </ul>
 
-        <input type="checkbox" name="agree" id="privacy2">
-        <label for="privacy2">개인정보 수집 및 이용에
-          동의<span> (선택)</span></label>
-        <ul class="info">
-          <li>수집항목 : 이름, 휴대전화번호,생년월일,비밀번호</li>
-          <li>수집·이용목적:회원제 서비스 제공</li>
-          <li>보유 및 이용기간 : 회원탈퇴 시 까지</li>
-        </ul>
         <div class="btn-center">
-          <button>다음</button>
+          <button class="step">다음</button>
         </div>
-
       </div>
 
-      <div class="tab-content">필수정보입력</div>
-      <div class="tab-content">상세정보입력</div>
+      <!-- 필수정보입력 -->
+      <div class="tab-content">
+        <h2>필수정보입력</h2>
+
+        <div class="info-input">
+          <div class="info-input-left">
+            <div>아이디</div>
+            <div>비밀번호</div>
+            <div>비밀번호 확인</div>
+            <div>이름</div>
+          </div>
+          <div class="info-input-right">
+            <div><input type="text" name="input" id="id"><span id="idCheckMsg"></span></div>
+            <div><input type="password" name="input" id="pw"></span></div>
+            <div><input type="password" name="input" id="pwRe"><span id="pwCheckMsg"></span></div>
+            <div><input type="text" name="input"></span></div>
+          </div>
+        </div>
+
+        <div class="btn-center">
+          <button class="step">다음</button>
+        </div>
+      </div>
+      <!-- 상세정보입력 -->
+      <div class="tab-content">
+        <h2>필수정보입력</h2>
+      </div>
+      <!-- 가입완료 -->
       <div class="tab-content">가입완료</div>
     </div>
   </div>
