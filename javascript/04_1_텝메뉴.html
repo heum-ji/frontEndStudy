@@ -67,9 +67,16 @@
       var tabContents = document.getElementsByClassName("tabContent");
       var tabs = document.getElementsByClassName("tab");
 
-      tabs[0].style.border = "1px solid #fff";
-      tabs[0].style.backgroundColor = "lightcoral";
-      tabContents[0].style.display = "block";
+      for (var i = 0; i < tabContents.length; i++) {
+        tabs[i].style.border = "1px solid black";
+        tabs[i].style.backgroundColor = "transparent";
+        tabContents[i].style.display = "none";
+      }
+
+      tabs[idx].style.borderBottom = "none";
+      tabs[idx].style.border = "1px solid #fff";
+      tabs[idx].style.backgroundColor = "lightcoral";
+      tabContents[idx].style.display = "block";
 
     }
   </script>
