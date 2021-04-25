@@ -1,0 +1,129 @@
+/* 콘텐츠 전체 */
+.content-wrap {
+  width: 900px;
+  border: 1px solid black;
+  margin: 0 auto;
+  overflow: hidden;
+}
+/* 상단 텝 전체 */
+.tab-wrap {
+  width: 901px;
+  margin: 0 auto;
+}
+/* 콘텐츠 내용 전체 */
+.tab-content-wrap {
+  width: 800px;
+  /* height: 420px; */
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* 상단 텝 */
+.tabs {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  overflow: hidden;
+}
+.tab {
+  border: 1px solid black;
+  border-top: 10px solid transparent;
+  border-left: none;
+  width: 450px;
+  height: 50px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 20px;
+  float: left;
+}
+.tab:first-child {
+  border-bottom: none;
+  border-top: 10px solid black;
+  font-weight: bold;
+}
+.tab:last-child {
+  border-left: none;
+  border-right: none;
+}
+
+/* 콘텐츠 */
+.tab-content {
+  display: none;
+}
+.tab-content:first-child {
+  display: block;
+}
+
+/* 약관 */
+.info {
+  border: 1px solid black;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.info > li {
+  margin-bottom: 5px;
+}
+label {
+  font-weight: bold;
+}
+label > span {
+  color: mediumvioletred;
+  font-weight: bold;
+}
+
+/* 가입 정보 */
+form {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.signUp p {
+  width: 250px;
+  margin: 0 auto;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: left;
+  margin-bottom: 10px;
+}
+.signUp input {
+  width: 240px;
+  height: 35px;
+  line-height: 35px;
+  padding-left: 10px;
+  border-radius: 5px;
+}
+/* 가입정보 입력 */
+.input {
+  width: 700px;
+  text-align: left;
+  margin: 0 auto;
+}
+/* 유효성 */
+.comment {
+  margin-left: 10px;
+  color: mediumvioletred;
+  height: 25px;
+  font-size: 18px;
+  padding-top: 5px;
+  padding-right: 8px;
+  display: block;
+}
+
+/* 하단 버튼 */
+.btnBox {
+  margin-top: 20px;
+  text-align: center;
+}
+.button {
+  width: 150px;
+  height: 45px;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+.button:hover {
+  background-color: mediumvioletred;
+}

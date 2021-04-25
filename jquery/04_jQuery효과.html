@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>04_jQuery효과</title>
+  <style>
+    #d1,
+    #d2 {
+      width: 500px;
+      height: 300px;
+      border: 1px solid black;
+      background-color: yellow;
+      margin-top: 20px;
+    }
+  </style>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-3.3.1.js"></script>
+  <script>
+    $(function () {
+      $("#btn1").click(function () {
+        $("#d1").show(400);
+      });
+
+      $("#btn2").click(function () {
+        $("#d1").hide(400);
+      });
+
+      $("#btn3").click(function () {
+        $("#d1").toggle(400);
+      });
+
+      $("#btn4").click(function () {
+        $("#d1").slideDown(1000);
+      });
+
+      $("#btn5").click(function () {
+        $("#d1").slideUp(1000);
+      });
+
+      $("#btn6").click(function () {
+        $("#d1").slideToggle(1000);
+      });
+
+      $("#btn7").click(function () {
+        $("#d1").fadeIn(1000);
+      });
+
+      $("#btn8").click(function () {
+        $("#d1").fadeOut(1000);
+      });
+
+      $("#btn9").click(function () {
+        $("#d1").fadeToggle(1000);
+      });
+
+      $("#btn10").click(function () {
+        $("#d2").animate({ "width": "300px", "height": "150px", "opacity": "0.5" }, 1000);
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <h1>효과</h1>
+  <hr>
+  <h2>페이지에 에니메이션 효과를 만들기 위한 메서드</h2>
+  <h3>사용 방법 : $("선택자").메서드 이름([speed], [easing], [callback]</h3>
+  <p>speed : 실행속도(ms), easing : 변경되는 지점별 속도(linear : 일정 | swing : 처음과 끝을 약간 느리게), </p>
+
+  <p>단 easing을 사용하려면 일반 jquery가 아닌 jquery-ui 라이브러리를 추가로 설정해야함</p>
+  <button id="btn1">show</button>
+  <button id="btn2">hide</button>
+  <button id="btn3">toggle</button>
+  <button id="btn4">slideDown</button>
+  <button id="btn5">slideUp</button>
+  <button id="btn6">slideToggle</button>
+  <button id="btn7">fadeIn</button>
+  <button id="btn8">fadeOut</button>
+  <button id="btn9">fadeToggle</button>
+  <div id="d1"></div>
+  <hr>
+  <h3>animate() : 현재의 css 속성을 설정한 값으로 차츰 변경되는 효과를 주는 메서드</h3>
+  <h3>$("선택자").animate({css속성},[시간],[easing],[callback]);</h3>
+  <p>모든속성이 적용되는 것은 아니며, jquery-ui 추가하는 경우 더 많은 기능이 구현(ex.background-color)</p>
+  <button id="btn10">animate</button>
+  <div id="d2"></div>
+</body>
+
+</html>

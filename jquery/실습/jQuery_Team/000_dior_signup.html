@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>000_dior_signup</title>
+  <link rel="stylesheet" type="text/css" href="css/common.css">
+  <link rel="stylesheet" type="text/css" href="css/signup.css">
+  <script type="text/javascript" src="http://code.jquery.com/jquery-3.3.1.js"></script>
+  <script type="text/javascript" src="js/signup.js"></script>
+</head>
+
+<body>
+  <!-- head -->
+  <div class="head">
+    <h1><a href="000_dior_main.html">Dior</a></h1>
+  </div>
+
+  <!-- contents-->
+  <div class="content-wrap">
+    <!-- 상단 텝 -->
+    <div class="tab-wrap">
+      <ul class="tabs">
+        <li class="tab">약관확인</li>
+        <li class="tab">가입정보</li>
+      </ul>
+    </div>
+    <!-- 하단 텝 내용 -->
+    <div class="tab-content-wrap">
+      <!-- 약관확인 -->
+      <div class="tab-content" style="margin-bottom: 100px;">
+        <input type="checkbox" id="allCheck"><label for="allCheck"> 이용약관 전체체크</label><br><br>
+        <input type="checkbox" name="agree" id="requirePrivacy">
+        <label for="requirePrivacy">이용약관 동의<span> (필수)</span></label>
+        <ul class="info">
+          <li>이곳은 필수사항</li>
+          <li>체크를 해야만 다음으로 갈 수 있어요</li>
+          <li>어디선가 본 것 같다면,,, 착각 ㅎㅎ...</li>
+        </ul>
+        <input type="checkbox" name="agree" id="privacy">
+        <label for="privacy">선택이니 마음대로 선택하세요.<span> (선택)</span></label>
+        <ul class="info">
+          <li>이곳은 선택사항</li>
+          <li>벌써 저희는 50%를 했습니다 :)</li>
+          <li>세미 프로젝트 한 발 남았다..</li>
+        </ul>
+        <div class="btnBox">
+          <input class="button" type="button" value="다음">
+        </div>
+      </div>
+      <!-- 가입정보 -->
+      <div class="tab-content">
+        <form action="/000_dior_login.html">
+          <div class="signUp">
+            <p>아이디</p>
+            <input type="text" name="id">
+            <span class="comment"></span><br>
+            <p>비밀번호</p>
+            <input type="password" name="pw">
+            <span class="comment"></span><br>
+            <p>비밀번호 재확인</p>
+            <input type="password" name="pwRe">
+            <span class="comment"></span><br>
+            <p>이메일</p>
+            <input type="text" name="email">
+            <span class="comment"></span><br>
+            <p>주소</p>
+            <input type="text" name="addr">
+            <span class="comment"></span>
+          </div>
+          <div class="btnBox">
+            <input class="button" type="submit" value="회원가입">
+            <input class="button" type="button" value="취소">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <div class="foot">
+    <div class="footup">
+      <h1>K-Dior</h1>
+      <h3>고객센터 없음</h3>
+    </div>
+    <div class="footdown">
+      <ul class="footer">
+        <li><a class="d" href="#">고객센터</a></li>
+        <li><a class="d" href="#">FNQ</a></li>
+        <li><a class="d" href="#">개인정보처리방침</a></li>
+        <li><a class="d" href="#">뭘 써야할까</a></li>
+      </ul>
+    </div>
+  </div>
+</body>
+
+</html>

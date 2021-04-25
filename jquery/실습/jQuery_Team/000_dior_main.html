@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>디올공식짭페이지</title>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-3.3.1.js"></script>
+
+  <style>
+    .menu>li {
+      list-style-type: none;
+      float: left;
+      width: calc(800px/4);
+      text-align: center;
+      line-height: 50px;
+    }
+
+    .menu {
+      padding: 0;
+      margin: 0;
+      height: 50px;
+    }
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
+
+    .head h1 {
+      display: inline-block;
+      font-size: 60px;
+      font-weight: inherit;
+    }
+
+    .head h5 {
+      cursor: pointer;
+    }
+
+    .head {
+      text-align: center;
+      position: relative;
+    }
+
+    #qwe {
+      font-size: 15px;
+      display: inline-block;
+      position: absolute;
+      right: 70px;
+      top: 50px;
+      /* padding-left: 230px; */
+      /* float: right; */
+      padding-top: 50px;
+    }
+
+    #asd {
+      font-size: 15px;
+      position: absolute;
+      top: 80px;
+      right: 70px;
+    }
+
+    .navi {
+      width: 800px;
+      margin: 0 auto;
+    }
+
+    .down {
+      margin-top: 10px;
+      z-index: 1;
+    }
+
+    .downcontents {
+      margin: 0 auto;
+      width: 1440px;
+    }
+
+    .down h2 {
+      text-align: center;
+    }
+
+    .down>p {
+      margin: 0 auto;
+      text-align: center;
+      width: 900px;
+    }
+
+    .foot {
+      margin-top: 20px;
+      width: 100%;
+      height: auto;
+      background-color: black;
+    }
+
+    .footup h1 {
+      color: white;
+      padding: 30px;
+      padding-bottom: 0px;
+      margin: 0px;
+    }
+
+    .footup h3 {
+      color: white;
+      padding: 30px;
+      margin: 0px;
+    }
+
+    iframe[name=missdior] {
+      padding-top: 20px;
+      margin: 0 auto;
+      display: block;
+    }
+
+    .footer {
+      margin: 0px;
+      padding: 0px;
+      height: 25px;
+    }
+
+    .footer li {
+      height: 100%;
+      width: 10%;
+      border: 1px solid white;
+      color: white;
+      float: left;
+      text-align: center;
+      list-style-type: none;
+      font-size: 10px;
+      line-height: 25px;
+    }
+
+    .d {
+      color: white;
+      font-size: 20px;
+    }
+
+    .menu>li>a {
+      display: block;
+      font-size: 18px;
+    }
+
+    .menu>li:hover {
+      transition: 0.4s;
+      /* border-top: 3px solid hotpink; */
+      font-weight: 900;
+      text-shadow: 5px 5px 5px gray;
+    }
+
+    .head a:hover {
+      text-shadow: 5px 5px 5px gray;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+
+    .tab {
+      width: 1200px;
+      margin: 0 auto;
+    }
+
+    .tabmenu:first-child {
+      background-color: rgba(247, 170, 209, 0.925);
+      width: 1200px;
+      height: 300px;
+
+    }
+
+    .tabmenu a {
+      color: white;
+    }
+
+    .tabmenu {
+      width: 1200px;
+      height: 440px;
+      background-color: rgba(247, 170, 209, 0.925);
+      display: none;
+      position: absolute;
+      z-index: 10;
+    }
+
+    .first {
+      width: 800px;
+      height: 200px;
+      margin: 0 auto;
+    }
+
+    .first>li {
+      width: 400px;
+      float: left;
+    }
+
+    .first>li>img {
+      padding-top: 20px;
+    }
+
+    .second {
+      width: 800px;
+      margin: 0 auto;
+    }
+
+    .second>li {
+      width: 200px;
+      height: 400px;
+      float: left;
+      text-align: center;
+    }
+
+    .second li a {
+      margin: 5px;
+    }
+
+    .tabmenu a:hover {
+      font-weight: bolder;
+    }
+
+    .slider {
+      list-style: none;
+      width: 1200px;
+      height: 500px;
+      overflow: hidden;
+      margin: 0 auto;
+    }
+
+    .slider:after {
+      display: block;
+    }
+
+    .slider li {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 500px;
+      opacity: 0;
+    }
+
+    .slider li div {
+      width: 100%;
+      height: 100%;
+      background-size: contain;
+      background-repeat: no-repeat;
+      position: relative;
+      background-position: 50%;
+
+    }
+
+    .btn {
+      text-align: center;
+    }
+
+    .btn button {
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      background-color: #fff;
+      color: #666;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .tabmenu:first-child img:hover {
+      position: absolute;
+      top: 17%;
+      transform: scale(1.1);
+      transition: 0.5s;
+    }
+
+    .tabmenu:first-child img {
+      padding-top: 10px;
+    }
+  </style>
+  <script>
+    $(function () {
+      $(".menu>li").eq(0).click(function () {
+        var tabmenu = $(".tabmenu");
+        tabmenu.eq(0).slideToggle(500);
+        tabmenu.eq(1).hide();
+        tabmenu.eq(2).hide();
+        tabmenu.eq(3).hide();
+      });
+      $(".menu>li").eq(1).click(function () {
+        var tabmenu = $(".tabmenu");
+        var menu = $(".menu>li>a");
+        menu.eq(1).addClass("qwe");
+        menu.eq(0).removeClass("qwe");
+        menu.eq(2).removeClass("qwe");
+        menu.eq(3).removeClass("qwe");
+        tabmenu.eq(1).slideToggle(500);
+        tabmenu.eq(0).hide();
+        tabmenu.eq(2).hide();
+        tabmenu.eq(3).hide();
+      });
+      $(".menu>li").eq(2).click(function () {
+        var tabmenu = $(".tabmenu");
+        var menu = $(".menu>li>a");
+        tabmenu.eq(2).slideToggle(500);
+        tabmenu.eq(0).hide();
+        tabmenu.eq(1).hide();
+        tabmenu.eq(3).hide();
+      })
+      $(".menu>li").eq(3).click(function () {
+        var tabmenu = $(".tabmenu");
+        var menu = $(".menu>li>a");
+        menu.eq(3).addClass("qwe");
+        menu.eq(0).removeClass("qwe");
+        menu.eq(1).removeClass("qwe");
+        menu.eq(2).removeClass("qwe");
+        tabmenu.eq(3).slideToggle(500);
+        tabmenu.eq(0).hide();
+        tabmenu.eq(1).hide();
+        tabmenu.eq(2).hide();
+
+      })
+      var $slider = $('.slider'),
+        $firstSlide = $slider.find('li').first()
+          .stop(true).animate({ 'opacity': 1 }, 300);
+
+      //이전버튼
+      function PrevSlide() {
+        //타이머 초기화
+        stopSlide();
+        startSlide();
+        var $lastSlide = $slider.find('li').last() //마지막 슬라이드 가져와서!
+          .prependTo($slider); //맨앞으로 보낸다
+        $secondSlide = $slider.find('li').eq(1)//두 번째 슬라이드 구하기
+          .stop(true).animate({ 'opacity': 0 }, 400); //밀려난 두 번째 슬라이드는 fadeOut 시키고
+        $firstSlide = $slider.find('li').first() //맨 처음 슬라이드 다시 구하기
+          .stop(true).animate({ 'opacity': 1 }, 400);//새로 들어온 첫 번째 슬라이드는 fadeIn 시키기
+      }
+      // 다음 버튼
+      function NextSlide() {
+        //타이머 초기화
+        stopSlide();
+        startSlide();
+        $firstSlide = $slider.find('li').first() // 첫 번째 슬라이드
+          .appendTo($slider); // 맨 마지막으로 보내기
+        var $lastSlide = $slider.find('li').last() // 맨 마지막으로 보낸 슬라이드
+          .stop(true).animate({ 'opacity': 0 }, 400); // fadeOut시키기
+        $firstSlide = $slider.find('li').first()// 맨 처음 슬라이드
+          .stop(true).animate({ 'opacity': 1 }, 400);// fadeIn 시키기
+      }
+
+      $('#next').on('click', function () { //다음버튼 클릭
+        NextSlide();
+      });
+      $('#prev').on('click', function () { //이전 버튼 클릭
+        PrevSlide();
+      });
+
+      startSlide(); // 자동 슬라이드
+
+      var Interval;
+
+      function startSlide() {
+        Interval = setInterval(NextSlide, 2000); //자동 슬라이드 설정
+      }
+
+      function stopSlide() { //자동 멈추기
+        clearInterval(Interval);
+      }
+      $('.slider').hover(function () { //마우스 오버시 슬라이드 멈춤
+        stopSlide();
+      }, function () {
+        startSlide();
+      });
+    });
+
+  </script>
+</head>
+
+<body>
+
+  <div class="dior">
+    <div class="head">
+      <h1><a href="000_dior_main.html">Dior</a></h1>
+      <h5 id="qwe"><a href="000_dior_login.html">MY PAGE</a></h5>
+      <h5 id="asd"><a href="000_dior_order.html">ORDER</a></h5>
+    </div>
+    <div class="navi">
+      <ul class="menu">
+        <li><a href="#">New</a></li>
+        <li><a href="#">Men</a></li>
+        <li><a href="#">Women</a></li>
+        <li><a href="#">Bag/Perfume</a></li>
+      </ul>
+    </div>
+    <div class="tab">
+      <div class="tabmenu">
+        <ul class="first" id="New">
+          <li>
+            <p><a href="#">여성 컬렉션</a></p>
+            <a href="#"><img src="img/left.jpg" width="250px" height="150px"></a>
+
+          </li>
+          <li>
+            <p><a href="#">남성 컬렉션</a></p>
+            <a href="#"><img src="img/menimg..jpg" width="250px" height="150px"></a>
+          </li>
+        </ul>
+      </div>
+      <div class="tabmenu">
+        <ul class="second" id="Men">
+          <li>
+            <p><a href="#">남성 컬렉션</a></p>
+            <img src="img/rigth.jpg" width="200px" height="150px">
+            <p><a href="#">what's new</a></p>
+            <img src="img/menimg..jpg" width="200px" height="150px">
+          </li>
+          <li>
+            <h4><a href="#">의류</a></h4>
+            <p><a href="#">코트</a></p>
+            <p><a href="#">블레이져</a></p>
+            <p><a href="#">수트</a></p>
+            <p><a href="#">셔츠</a></p>
+            <p><a href="#">티셔츠</a></p>
+            <p><a href="#">팬츠</a></p>
+          </li>
+          <li>
+            <h4><a href="#">가방</a></h4>
+          </li>
+          <li>
+            <h4><a href="#">슈즈</a></h4>
+            <img src="img/qwe.jpg" width="200px" height="150px">
+            <p><a href="#">스니커즈</a></p>
+            <p><a href="#">하이탑/로우</a></p>
+            <p><a href="#">부츠/로퍼</a></p>
+          </li>
+        </ul>
+      </div>
+      <div class="tabmenu">
+        <ul class="second" id="Women">
+          <li>
+            <p><a href="#">여성 컬렉션</a></p>
+            <img src="img/left.jpg" width="200px" height="150px">
+            <p><a href="#">what's new</a></p>
+            <img src="img/menimg..jpg" width="200px" height="150px">
+          </li>
+          <li>
+            <h4><a href="#">의류</a></h4>
+            <p><a href="#">코트</a></p>
+            <p><a href="#">블레이져</a></p>
+            <p><a href="#">수트</a></p>
+            <p><a href="#">셔츠</a></p>
+            <p><a href="#">티셔츠</a></p>
+            <p><a href="#">팬츠</a></p>
+          </li>
+          <li>
+            <h4><a href="#">가방</a></h4>
+          </li>
+          <li>
+            <h4><a href="#">슈즈</a></h4>
+            <img src="img/womensnk.jpg" width="200px" height="150px">
+            <p><a href="#">스니커즈</a></p>
+            <p><a href="#">하이탑/로우</a></p>
+            <p><a href="#">부츠/샌들</a></p>
+          </li>
+        </ul>
+      </div>
+      <div class="tabmenu">
+        <ul class="second" id="Bag">
+          <li>
+            <p><a href="000_dior_bag.html">Best</a></p>
+            <a href="000_dior_bag.html"><img src="img/diorbag.jpg" width="200px" height="150px"></a>
+            <p><a href="000_dior_perfume.html">what's new</a></p>
+            <a href="000_dior_perfume.html"><img src="img/소바주 퍼퓸.webp" width="200px" height="150px"></a>
+          </li>
+          <li>
+            <h4><a href="#">핸들백</a></h4>
+            <p><a href="#">가방</a></p>
+            <p><a href="#">잘</a></p>
+            <p><a href="#">몰러유</a></p>
+
+          </li>
+          <li>
+            <h4><a href="#">미니백&벨트백</a></h4>
+            <img src="img/bagg.jpg" width="200px" height="150px">
+          </li>
+          <li>
+            <h4><a href="#">백팩</a></h4>
+
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <ul class="slider">
+      <li>
+        <div class="img1" style="background-image:url('img/slideimg.png')"></div>
+      </li>
+      <li>
+        <div class="img2" style="background-image:url(./img/slidelast.png)" style="background-size:cover"></div>
+      </li>
+      <li>
+        <div class="img3" style="background-image:url(./img/slide3.png);"></div>
+      </li>
+      <li>
+        <div class="img4" style="background-image:url(./img/slide5.png);"></div>
+      </li>
+    </ul>
+    <div class="btn">
+      <button type="button" id="prev">
+        < </button>
+          <button type="button" id="next"> > </button>
+    </div>
+    <div class="down">
+      <div class="downcontents">
+        <a
+          href="https://www.dior.com/ko_kr/%ED%96%A5%EC%88%98/%EC%97%AC%EC%84%B1-%ED%96%A5%EC%88%98/%EB%AF%B8%EC%8A%A4-%EB%94%94%EC%98%AC"><img
+            class="botimg" src="img/pcd-cover-miss-dior-rose-n-roses5_1440_1200.jpg"></a>
+      </div>
+      <a
+        href="https://www.dior.com/ko_kr/%ED%96%A5%EC%88%98/%EC%97%AC%EC%84%B1-%ED%96%A5%EC%88%98/%EB%AF%B8%EC%8A%A4-%EB%94%94%EC%98%AC">
+        <h2>미스 디올</h2>
+      </a>
+      <p>“저를 위해 사랑의 향기가 나는 향수를 제작해 주세요.” 크리스챤 디올.
+        미스 디올은 디올 고유의 여성미와 꾸뛰르 정신이 담겨 있는, 사랑을 향한 찬가입니다. 섬세한 장인의 손길과 현대적인 개성이 느껴지는 대담하면서도 세련된 잔향이 돋보입니다.</p>
+    </div>
+    <div class="video">
+      <div class="mainvideo">
+        <iframe name="missdior" width="1198" height="674" src="https://www.youtube.com/embed/h4s0llOpKrU"
+          title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="foot">
+      <div class="footup">
+        <h1>K-Dior</h1>
+        <h3>고객센터 없음</h3>
+      </div>
+      <div class="footdown">
+        <ul class="footer">
+          <li><a class="d" href="#">고객센터</a></li>
+          <li><a class="d" href="#">FNQ</a></li>
+          <li><a class="d" href="#">개인정보처리방침</a></li>
+          <li><a class="d" href="#">뭘 써야할까</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

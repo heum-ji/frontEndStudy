@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>000_dior_order</title>
+  <style>
+    a {
+      text-decoration: none;
+      color: white;
+    }
+
+    .head a {
+      text-decoration: none;
+      color: black;
+      font-size: 60px;
+      text-align: center;
+    }
+
+    .head>h1 {
+      font-size: 60px;
+      font-weight: inherit;
+    }
+
+    .head {
+      text-align: center;
+    }
+
+    .head h4 {
+      font-weight: 200;
+    }
+
+    .bothead {
+      width: 1100px;
+      margin: 0 auto;
+      border-bottom: 1px solid black;
+    }
+
+    .subtitle {
+      width: 800px;
+      margin: 0 auto;
+    }
+
+    .contents {
+      width: 1200px;
+      margin: 0 auto;
+
+      overflow: hidden;
+    }
+
+    .leftcon {
+      overflow: hidden;
+      display: inline-block;
+      width: 900px;
+    }
+
+    .rightcon {
+      display: inline-block;
+      width: 290px;
+      float: right;
+      position: fixed;
+    }
+
+    .rightcon h2 {
+      text-align: center;
+    }
+
+    .limg {
+      display: inline-block;
+      width: 65%;
+      /* height: 400px; */
+    }
+
+    .coment {
+      width: 30%;
+      float: right
+        /* display: inline-block; */
+    }
+
+    .button {
+      display: block;
+      background-color: black;
+      color: white;
+      border-radius: 5px;
+      width: 150px;
+      margin: 0 auto;
+      /* margin-top: 140px; */
+      cursor: pointer;
+
+    }
+
+    button:enabled:hover {
+      cursor: pointer;
+      background-color: mediumvioletred;
+    }
+
+    .button a {
+      text-decoration: none;
+      color: white;
+    }
+
+    button {
+      background-color: black;
+      width: 100px;
+      border-radius: 5px;
+      margin-left: 30px;
+    }
+
+    .botcontents {
+      width: 1200px;
+      height: auto;
+      margin: 0 auto;
+      margin-top: 50px;
+      overflow: hidden;
+    }
+
+    .botimg {
+      width: 550px;
+      height: 400px;
+      display: inline-block;
+      float: left;
+    }
+
+    .botcoment {
+      width: 30%;
+      float: left;
+      padding-left: 7%;
+    }
+
+    .botcoment>p {
+      padding-right: 50px;
+    }
+
+    .foot {
+      margin-top: 20px;
+      width: 100%;
+      height: auto;
+      background-color: black;
+    }
+
+    .footup h1 {
+      color: white;
+      padding: 30px;
+      padding-bottom: 0px;
+      margin: 0px;
+    }
+
+    .footup h3 {
+      color: white;
+      padding: 30px;
+      margin: 0px;
+    }
+
+    .footer {
+      margin: 0px;
+      padding: 0px;
+      height: 25px;
+    }
+
+    .footer li {
+      height: 100%;
+      width: 10%;
+      border: 1px solid white;
+      color: white;
+      float: left;
+      text-align: center;
+      list-style-type: none;
+      font-size: 10px;
+      line-height: 25px;
+    }
+
+    .d {
+      color: white;
+      font-size: 12px;
+    }
+
+    .one {
+      background-color: white;
+      width: 50px;
+      height: 30px;
+    }
+  </style>
+  <script>
+    var count1 = 1;
+    var count2 = 1;
+    var price1 = 3000;
+    var price2 = 2900;
+    function add1() {
+      count1++;
+      var two = document.getElementsByClassName("two");
+      var price = document.getElementsByClassName("price");
+      var whole = document.getElementsByClassName("whole");
+      price1 = 3000 * count1;
+      price[0].innerHTML = (price1) + "($)";
+      two[0].innerHTML = ("수량 : " + count1);
+      whole[0].innerHTML = "상품 수량 : " + (count1 + count2);
+      whole[1].innerHTML = "주문금액 합계 : " + (price1 + price2) + "($)";
+      buttonActive1();
+    }
+    function sub1() {
+      count1--;
+      var two = document.getElementsByClassName("two");
+      var price = document.getElementsByClassName("price");
+      var whole = document.getElementsByClassName("whole");
+      price1 = 3000 * count1;
+      price[0].innerHTML = (price1) + "($)";
+      two[0].innerHTML = ("수량 : " + count1);
+      whole[0].innerHTML = "상품 수량 : " + (count1 + count2);
+      whole[1].innerHTML = "주문금액 합계 : " + (price1 + price2) + "($)";
+      buttonActive1();
+    }
+
+    function add2() {
+      count2++;
+      var two = document.getElementsByClassName("two");
+      var price = document.getElementsByClassName("price");
+      var whole = document.getElementsByClassName("whole");
+      price2 = 2900 * count2;
+      price[1].innerHTML = (price2) + "($)";
+      two[1].innerHTML = ("수량 : " + count2);
+      whole[0].innerHTML = "상품 수량 : " + (count1 + count2);
+      whole[1].innerHTML = "주문금액 합계 : " + (price1 + price2) + "($)";
+      buttonActive2();
+    }
+
+    function sub2() {
+      count2--;
+      var two = document.getElementsByClassName("two");
+      var price = document.getElementsByClassName("price");
+      var whole = document.getElementsByClassName("whole");
+      price2 = 2900 * count2;
+      price[1].innerHTML = (price2) + "($)";
+      two[1].innerHTML = ("수량 : " + count2);
+      whole[0].innerHTML = "상품 수량 : " + (count1 + count2);
+      whole[1].innerHTML = "주문금액 합계 : " + (price1 + price2) + "($)";
+      buttonActive2();
+    }
+
+    function buttonActive1() {
+      var sub = document.getElementsByClassName("one");
+      sub[0].disabled = false;
+      if (count1 == 1) {
+        sub[0].disabled = true;
+      }
+    }
+
+    function buttonActive2() {
+      var sub = document.getElementsByClassName("one");
+      sub[2].disabled = false;
+      if (count2 == 1) {
+        sub[2].disabled = true;
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <div class="main">
+    <div class="head">
+      <h1><a href="000_dior_main.html">Dior</a></h1>
+    </div>
+    <div class="bothead">
+      <h1>장바구니</h1>
+    </div>
+    <div class="subtitle">
+      <h2>상품</h2>
+    </div>
+    <div class="contents">
+      <div class="leftcon">
+        <div class="limg">
+          <img class="img" src="img/diorbag1.jpg" width="550px" height="400px">
+        </div>
+        <div class="coment">
+          <h4>DIOR BOOK TOTE 백</h4>
+          <h5>블루 Dior Oblique 자수</h5>
+          <p class="price">3000($)</p>
+          <button onclick="sub1();" class="one" disabled>-</button>
+          <button onclick="add1();" class="one">+</button>
+          <p class="two">수량 : 1</p>
+          <button><a href="#">주문하기</a></button>
+        </div>
+      </div>
+      <div class="rightcon">
+        <h2>합계</h2>
+        <h4 class="whole">상품 수량 : 2</h4>
+        <h4 class="whole">주문금액 합계 : 5900($)</h4>
+        <button class="button">
+          <a href="#">
+            전체 주문하기
+          </a>
+        </button>
+      </div>
+    </div>
+    <div class="botcontents">
+      <div class="botimg">
+        <img class="img" src="img/dior_bag2.jpg" width="550px" height="400px">
+      </div>
+      <div class="botcoment">
+        <h4>DIOR BOOK TOTE 백</h4>
+        <h5>블루 Dior Oblique 자수</h5>
+        <p class="price">2900($)</p>
+        <button onclick="sub2();" class="one" disabled>-</button>
+        <button onclick="add2();" class="one">+</button>
+        <p class="two">수량 : 1</p>
+        <button><a href="#">주문하기</a></button>
+      </div>
+    </div>
+    <div class="foot">
+      <div class="footup">
+        <h1>K-Dior</h1>
+        <h3>고객센터 없음</h3>
+      </div>
+      <div class="footdown">
+        <ul class="footer">
+          <li><a class="d" href="#">고객센터</a></li>
+          <li><a class="d" href="#">FNQ</a></li>
+          <li><a class="d" href="#">개인정보처리방침</a></li>
+          <li><a class="d" href="#">뭘 써야할까</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

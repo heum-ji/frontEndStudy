@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>000_dior_perfume</title>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <style>
+    a {
+      text-decoration: none;
+      color: black;
+    }
+
+    .head h1 {
+      display: inline-block;
+      font-size: 60px;
+      font-weight: inherit;
+    }
+
+    .head h5 {
+      cursor: pointer;
+    }
+
+    .head {
+      text-align: center;
+      position: relative;
+    }
+
+    #qwe {
+      font-size: 15px;
+      display: inline-block;
+      position: absolute;
+      right: 70px;
+      top: 50px;
+      /* padding-left: 230px; */
+      /* float: right; */
+      padding-top: 50px;
+    }
+
+    #asd {
+      font-size: 15px;
+      position: absolute;
+      top: 80px;
+      right: 70px;
+    }
+
+    .head a:hover {
+      text-shadow: 5px 5px 5px gray;
+    }
+
+    .d {
+      margin-top: 50px;
+    }
+
+    .foot {
+      margin-top: 20px;
+      width: 100%;
+      height: auto;
+      background-color: black;
+      display: block;
+    }
+
+    .footup h1 {
+      color: white;
+      padding: 30px;
+      padding-bottom: 0px;
+      margin: 0px;
+    }
+
+    .footup h3 {
+      color: white;
+      padding: 30px;
+      margin: 0px;
+    }
+
+    .footer {
+      margin: 0px;
+      padding: 0px;
+      height: 25px;
+    }
+
+    .footer li {
+      height: 100%;
+      width: 10%;
+      border: 1px solid white;
+      color: white;
+      float: left;
+      text-align: center;
+      list-style-type: none;
+      font-size: 10px;
+      line-height: 25px;
+    }
+
+    .d {
+      color: white;
+      font-size: 12px;
+    }
+
+
+    .main {
+      overflow: hidden;
+      border-style: none;
+    }
+
+    .main>div {
+      float: left;
+      width: 35%;
+
+      margin-left: 50px;
+    }
+
+    .main>.left {
+      margin-left: 200px;
+    }
+
+    .left img {
+      width: 100%;
+    }
+
+    .left>.three {
+      display: inline-block;
+      width: 10%;
+      margin-left: 17%;
+    }
+
+    .left p {
+      font-size: 5px;
+      display: inline-block;
+      padding-left: 14%;
+      font-weight: bold;
+    }
+
+    .left {
+      border-style: none;
+    }
+
+    .right h4 {
+      color: rgb(255, 135, 92);
+    }
+
+    .right p {
+      font-weight: bold;
+      font-size: 15px;
+    }
+
+    input[type=radio] {
+      display: none;
+    }
+
+    .right label {
+      display: block;
+      width: 480px;
+      height: 80px;
+      border: 1px solid black;
+      line-height: 80px;
+      font-weight: bold;
+      padding-left: 20px;
+      margin-top: 10px;
+      border-radius: 5px;
+      margin-left: 10px;
+    }
+
+    input[type=radio]:checked+label {
+      color: rgb(47, 47, 248);
+      border: 3px solid rgb(88, 88, 247);
+    }
+
+    .color>label {
+      width: 40%;
+      display: inline-block;
+    }
+
+    .color>label>img {
+      width: 20px;
+      height: 20px;
+      padding-right: 15px;
+    }
+
+    .memory>label {
+      width: 40%;
+      display: inline-block;
+    }
+
+    .right {
+      border-style: none;
+    }
+
+    .right>div {
+      border-style: none;
+      border-bottom: 1px solid black;
+    }
+
+    .price>input[type=button] {
+      display: inline-block;
+      width: 60%;
+      height: 50px;
+      border-radius: 5px;
+    }
+
+    .price {
+      border-style: none;
+    }
+
+    #button {
+      background-color: rgb(91, 158, 247);
+      color: white;
+      font-weight: bold;
+    }
+
+    #mainimage {
+      padding-top: 30%;
+      height: 500px;
+    }
+
+    .left .subimage {
+      width: 49.4%;
+    }
+
+    .color>img {
+      width: 50px;
+    }
+  </style>
+  <script>
+    var pf = 300;
+    var odpf = 800;
+    var odt = 1200;
+    var thirty = 1;
+    var seventyfive = 2;
+    var htwentyfive = 3;
+    function func1() {
+      var mainimage = document.getElementById("mainimage");
+      var subimage = document.getElementsByClassName("subimage");
+      var price = document.getElementById("prices");
+      var plus = document.getElementById("plus");
+      mainimage.src = "img/소바주 퍼퓸.webp";
+      subimage[0].src = "img/소바쥬 퍼퓸 1.webp";
+      subimage[1].src = "img/소바쥬 퍼퓸2.webp";
+      price.innerHTML = "$" + pf;
+      plus.innerHTML = "약 $" + (pf / 10) + "의 VAT포함";
+    }
+    function func2() {
+      var mainimage = document.getElementById("mainimage");
+      var subimage = document.getElementsByClassName("subimage");
+      var price = document.getElementById("prices");
+      var plus = document.getElementById("plus");
+      mainimage.src = "img/소바쥬 오 드 퍼퓸.webp";
+      subimage[0].src = "img/오드퍼퓸1.webp";
+      subimage[1].src = "img/오드퍼퓸2.webp";
+      price.innerHTML = "$" + odpf;
+      plus.innerHTML = "약 $" + (odpf / 10) + "의 VAT포함";
+    }
+    function func3() {
+      var mainimage = document.getElementById("mainimage");
+      var subimage = document.getElementsByClassName("subimage");
+      var price = document.getElementById("prices");
+      var plus = document.getElementById("plus");
+      mainimage.src = "img/소바쥬 오 드 뚜왈렛.webp";
+      subimage[0].src = "img/오드뚜왈렛1.webp";
+      subimage[1].src = "img/오드뚜왈렛2.webp";
+      price.innerHTML = "$" + odt;
+      plus.innerHTML = "약 $" + (odt / 10) + "의 VAT포함";
+    }
+
+    $(function () {
+      $(".color>img").mouseover(function () {
+        var idx = $(".color>img").index(this);
+        $(".color>img").each(function (index, item) {
+          if (index <= idx) {
+            $(item).attr("src", "img/동그라미2.png");
+          } else {
+            $(item).attr("src", "img/동그라미1.png");
+          }
+        });
+        $("#result").html(idx + 1);
+      })
+
+    })
+
+
+  </script>
+</head>
+
+<body>
+  <div class="shop">
+    <div class="head">
+      <h1><a href="000_dior_main.html">Dior</a></h1>
+      <h5 id="qwe"><a href="000_dior_login.html">MY PAGE</a></h5>
+      <h5 id="asd"><a href="000_dior_order.html">ORDER</a></h5>
+    </div>
+
+    <div class="main">
+      <div class="left">
+        <img src="img/소바주 퍼퓸.webp" id="mainimage">
+        <br>
+        <img src="img/소바쥬 퍼퓸 1.webp" class="subimage">
+        <img src="img/소바쥬 퍼퓸2.webp" class="subimage">
+      </div>
+      <div class="right">
+        <div class="size">
+          <br><br><br><br><br><br>
+          <h4>남성 향수</h4>
+          <h1>소바쥬</h1><br>
+          <p>원하는 상품을 선택하세요.</p>
+          <input type="radio" name="perfume" value="pf" id="pf">
+          <label for="pf" onclick="func1();">퍼퓸</label>
+          <input type="radio" name="perfume" value="odpf" id="odpf">
+          <label for="odpf" onclick="func2();">오 드 퍼퓸</label>
+          <input type="radio" name="perfume" value="odt" id="odt">
+          <label for="odt" onclick="func3();">오 드 뚜왈렛</label><br><br>
+        </div>
+        <div class="color">
+          <br>
+          <p>Intensity를 선택하세요.</p>
+          <img class="star" src="img/동그라미1.png">
+          <img class="star" src="img/동그라미1.png">
+          <img class="star" src="img/동그라미1.png">
+          <img class="star" src="img/동그라미1.png">
+          <img class="star" src="img/동그라미1.png">
+          <br><br><br>
+        </div>
+        <div class="memory">
+          <br>
+          <p>원하는 용량을 선택하세요.</p>
+          <input type="radio" name="memory" value="small" id="small">
+          <label for="small">30ml</label>
+          <input type="radio" name="memory" value="middle" id="middle">
+          <label for="middle">75ml</label>
+          <input type="radio" name="memory" value="big" id="big">
+          <label for="big">125ml</label><br><br><br>
+        </div>
+        <div class="price">
+          <h1 id="prices">$300</h1>
+          <p id="plus">약 $30의 VAT포함</p>
+          <input type="button" value="장바구니에 담기" id="button"><br><br>
+          <p>도착:</p>
+          <P>금 2022/04/23-무료배송</P><br><br>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="foot">
+      <div class="footup">
+        <h1>K-Dior</h1>
+        <h3>고객센터 없음</h3>
+      </div>
+      <div class="footdown">
+        <ul class="footer">
+          <li><a class="d" href="#">고객센터</a></li>
+          <li><a class="d" href="#">FNQ</a></li>
+          <li><a class="d" href="#">개인정보처리방침</a></li>
+          <li><a class="d" href="#">뭘 써야할까</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
